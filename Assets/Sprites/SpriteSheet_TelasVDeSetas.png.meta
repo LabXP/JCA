@@ -1,0 +1,135 @@
+fileFormatVersion: 2
+guid: 0bc5333fc0e1849c6a82180303c90212
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: SpriteSheet_TelasVDeSetas_0
+    21300002: SpriteSheet_TelasVDeSetas_1
+    21300004: SpriteSheet_TelasVDeSetas_2
+    21300006: SpriteSheet_TelasVDeSetas_3
+    21300008: SpriteSheet_TelasVDeSetas_4
+    21300010: SpriteSheet_TelasVDeSetas_5
+    21300012: SpriteSheet_TelasVDeSetas_6
+    21300014: SpriteSheet_TelasVDeSetas_7
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: SpriteSheet_TelasVDeSetas_0
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 1259
+        width: 373
+        height: 368
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SpriteSheet_TelasVDeSetas_1
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 1269
+        width: 352
+        height: 348
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SpriteSheet_TelasVDeSetas_2
+      rect:
+        serializedVersion: 2
+        x: 939
+        y: 912
+        width: 1560
+        height: 775
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SpriteSheet_TelasVDeSetas_3
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 1077
+        width: 435
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SpriteSheet_TelasVDeSetas_4
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 914
+        width: 435
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SpriteSheet_TelasVDeSetas_5
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 592
+        width: 445
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SpriteSheet_TelasVDeSetas_6
+      rect:
+        serializedVersion: 2
+        x: 939
+        y: 99
+        width: 1560
+        height: 775
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SpriteSheet_TelasVDeSetas_7
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 432
+        width: 445
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 

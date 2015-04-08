@@ -1,0 +1,146 @@
+fileFormatVersion: 2
+guid: 383558b3d73f64fb6a00097db79db36e
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Spritesheet_Correcoes_0
+    21300002: Spritesheet_Correcoes_1
+    21300004: Spritesheet_Correcoes_2
+    21300006: Spritesheet_Correcoes_3
+    21300008: Spritesheet_Correcoes_4
+    21300010: Spritesheet_Correcoes_5
+    21300012: Spritesheet_Correcoes_6
+    21300014: Spritesheet_Correcoes_7
+    21300016: Spritesheet_Correcoes_8
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Spritesheet_Correcoes_0
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 451
+        width: 1444
+        height: 333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Spritesheet_Correcoes_1
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 249
+        width: 141
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Spritesheet_Correcoes_2
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 237
+        width: 151
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Spritesheet_Correcoes_3
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 268
+        width: 75
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Spritesheet_Correcoes_4
+      rect:
+        serializedVersion: 2
+        x: 882
+        y: 268
+        width: 76
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Spritesheet_Correcoes_5
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 67
+        width: 151
+        height: 151
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Spritesheet_Correcoes_6
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 67
+        width: 160
+        height: 151
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Spritesheet_Correcoes_7
+      rect:
+        serializedVersion: 2
+        x: 711
+        y: 116
+        width: 85
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Spritesheet_Correcoes_8
+      rect:
+        serializedVersion: 2
+        x: 877
+        y: 116
+        width: 83
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
