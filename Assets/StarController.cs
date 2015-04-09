@@ -25,15 +25,17 @@ public class StarController : MonoBehaviour
 		{
 				//print ("a"+starCount [int.Parse (level)]);
 				//print (batata);
-				level = Regex.Match (Application.loadedLevelName, @"\d+").Value;
-//				print (level+"a");
+				level = Regex.Match(Application.loadedLevelName, @"\d+").Value;
+				print (level+"a");
 				if (FindObjectOfType<GameController> () != null && FindObjectOfType<GameController> ().win) {
 						batata = FindObjectOfType<GameController> ().bubblesLeft;
 						Stars ();
 				}
 		}
 		void Stars ()
-		{
+		{ 
+			//Executa depois de somar o score ao total
+			if (FindObjectOfType<HighScore>().control){
 				if (Application.loadedLevelName == "Level1" || Application.loadedLevelName == "Level2" || Application.loadedLevelName == "Level3" || Application.loadedLevelName == "Level4" || Application.loadedLevelName == "Level5") {
 						if (batata <= 3 && starCount [int.Parse (level)] < 1) {
 								starCount [int.Parse (level)] = 1;
@@ -67,5 +69,6 @@ public class StarController : MonoBehaviour
 								starCount [int.Parse (level)] = 3;
 						}
 				}
+			}
 		}
 }

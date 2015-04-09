@@ -31,7 +31,7 @@ TextureImporter:
   generateCubemap: 0
   seamlessCubemap: 0
   textureFormat: -1
-  maxTextureSize: 1024
+  maxTextureSize: 2048
   textureSettings:
     filterMode: -1
     aniso: 16
@@ -56,51 +56,51 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 30
-        y: 451
+        y: 439
         width: 1444
         height: 333
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Spritesheet_Correcoes_1
       rect:
         serializedVersion: 2
-        x: 252
-        y: 249
+        x: 254
+        y: 251
         width: 141
         height: 141
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Spritesheet_Correcoes_2
       rect:
         serializedVersion: 2
-        x: 444
-        y: 237
+        x: 450
+        y: 247
         width: 151
-        height: 162
+        height: 151
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Spritesheet_Correcoes_3
       rect:
         serializedVersion: 2
-        x: 716
-        y: 268
+        x: 854
+        y: 293
         width: 75
         height: 56
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Spritesheet_Correcoes_4
       rect:
         serializedVersion: 2
-        x: 882
-        y: 268
+        x: 1019
+        y: 292
         width: 76
         height: 56
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Spritesheet_Correcoes_5
       rect:
@@ -110,37 +110,37 @@ TextureImporter:
         width: 151
         height: 151
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Spritesheet_Correcoes_6
       rect:
         serializedVersion: 2
-        x: 438
-        y: 67
-        width: 160
-        height: 151
+        x: 457
+        y: 70
+        width: 141
+        height: 141
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Spritesheet_Correcoes_7
       rect:
         serializedVersion: 2
-        x: 711
-        y: 116
+        x: 849
+        y: 111
         width: 85
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Spritesheet_Correcoes_8
       rect:
         serializedVersion: 2
-        x: 877
-        y: 116
+        x: 1016
+        y: 113
         width: 83
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

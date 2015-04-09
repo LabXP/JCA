@@ -9,6 +9,7 @@ public class Entrar : MonoBehaviour {
 	public Sprite hover;
 	public Sprite NotHover;
 	public AudioClip HoverSound;
+	public GameObject BlankError;
 
 	public bool Logou;
 
@@ -19,6 +20,14 @@ public class Entrar : MonoBehaviour {
 	void OnMouseDown(){
 		LoginInfo[0] = text[0].GetComponent<InputField>().text;
 		LoginInfo[1] = text[1].GetComponent<InputField>().text;
+		if (LoginInfo[0] == "" || LoginInfo[1] == ""){
+			StartCoroutine(Error());
+		}
+	}
+	IEnumerator Error(){
+		BlankError.SetActive(true);
+		yield return new WaitForSeconds(3f);
+		BlankError.SetActive(false);
 	}
 
 	void OnMouseOver(){
