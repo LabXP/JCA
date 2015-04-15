@@ -13,7 +13,7 @@ public class Level2 : MonoBehaviour
 		public AudioClip HoverSound;
 		public GameObject[] Hoverparticles;
 		private Animator anim;
-		
+
 		void Awake ()
 		{
 				anim = gameObject.GetComponentInChildren<Animator>();
@@ -22,9 +22,9 @@ public class Level2 : MonoBehaviour
 		}
 		void OnMouseDown ()
 		{		
-				//if ((FindObjectOfType<StarController> ().starCount [int.Parse (level) - 1]) > 0){
+				if ((FindObjectOfType<StarController> ().starCount [int.Parse (level) - 1]) > 0){
 				Application.LoadLevel (LevelName);
-			//}
+			}
 		}
 		void OnMouseEnter ()
 		{

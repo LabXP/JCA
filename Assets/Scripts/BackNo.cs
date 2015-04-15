@@ -15,6 +15,10 @@ public class BackNo : MonoBehaviour {
 	}
 	void OnMouseDown(){
 		PopUp.SetActive(false);
+		Invoke("Resume", 0.05f);
 		gameObject.GetComponent<SpriteRenderer>().sprite = NotHover;
+	}
+	void Resume(){
+		FindObjectOfType<GameController> ().playing = true;		
 	}
 }
