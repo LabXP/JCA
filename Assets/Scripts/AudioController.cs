@@ -3,6 +3,7 @@ using System.Collections;
 
 public class AudioController : MonoBehaviour
 {
+		public static AudioController instance = null;
 		private AudioSource[] SoundFX;
 		public AudioClip[] AmbientMusic;
 		public bool FX, Music;
@@ -12,9 +13,14 @@ public class AudioController : MonoBehaviour
 				
 		}
 		void Awake ()
-		{
+		{	
+			if (instance == null){
+				instance = this;
+			} else if (instance!=this){
+				Destroy(gameObject);
+			}
 
-				DontDestroyOnLoad (transform.gameObject);
+				DontDestroyOnLoad (gameObject);
 		}
 	
 		// Update is called once per frame

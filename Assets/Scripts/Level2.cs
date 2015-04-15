@@ -13,10 +13,12 @@ public class Level2 : MonoBehaviour
 		public AudioClip HoverSound;
 		public GameObject[] Hoverparticles;
 		private Animator anim;
+		
 		void Awake ()
 		{
 				anim = gameObject.GetComponentInChildren<Animator>();
 				level = Regex.Match (LevelName, @"\d+").Value;
+				
 		}
 		void OnMouseDown ()
 		{		

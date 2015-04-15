@@ -1,0 +1,168 @@
+fileFormatVersion: 2
+guid: f344b9230210b4362be0511b01fc8b43
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: brilho bracelete_0
+    21300002: brilho bracelete_1
+    21300004: brilho bracelete_2
+    21300006: brilho bracelete_3
+    21300008: brilho bracelete_4
+    21300010: brilho bracelete_5
+    21300012: brilho bracelete_6
+    21300014: brilho bracelete_7
+    21300016: brilho bracelete_8
+    21300018: brilho bracelete_9
+    21300020: brilho bracelete_10
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: brilho bracelete_0
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 44
+        width: 122
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: brilho bracelete_1
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 44
+        width: 122
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: brilho bracelete_2
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 44
+        width: 122
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: brilho bracelete_3
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 44
+        width: 98
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: brilho bracelete_4
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 44
+        width: 91
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: brilho bracelete_5
+      rect:
+        serializedVersion: 2
+        x: 602
+        y: 49
+        width: 50
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: brilho bracelete_6
+      rect:
+        serializedVersion: 2
+        x: 722
+        y: 49
+        width: 50
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: brilho bracelete_7
+      rect:
+        serializedVersion: 2
+        x: 841
+        y: 51
+        width: 50
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: brilho bracelete_8
+      rect:
+        serializedVersion: 2
+        x: 963
+        y: 51
+        width: 50
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: brilho bracelete_9
+      rect:
+        serializedVersion: 2
+        x: 1084
+        y: 51
+        width: 50
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: brilho bracelete_10
+      rect:
+        serializedVersion: 2
+        x: 1157
+        y: 43
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
