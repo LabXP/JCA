@@ -17,7 +17,7 @@ public class LevelNav : MonoBehaviour
 		}
 		void OnMouseEnter ()
 		{
-				audio.PlayOneShot (HoverSound);
+				GetComponent<AudioSource>().PlayOneShot (HoverSound);
 		}
 		void OnMouseExit ()
 		{

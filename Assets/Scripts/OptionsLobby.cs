@@ -9,7 +9,7 @@ public class OptionsLobby : MonoBehaviour {
 
 	void OnMouseEnter(){
 		gameObject.GetComponent<SpriteRenderer>().sprite = Hover;
-		audio.PlayOneShot(HoverSound, 1f);
+		GetComponent<AudioSource>().PlayOneShot(HoverSound, 1f);
 	}
 	void OnMouseExit(){
 		gameObject.GetComponent<SpriteRenderer>().sprite = NotHover;	

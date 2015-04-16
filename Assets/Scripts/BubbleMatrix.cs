@@ -79,7 +79,7 @@ public class BubbleMatrix : MonoBehaviour
 								int num = UnityEngine.Random.Range (0, this.bubblesVariety);
 								GameObject gameObject = (GameObject)Instantiate (this.bubbles [num], this.position, Quaternion.identity);
 								gameObject.name = bubbles [num].name;
-								gameObject.rigidbody2D.isKinematic = true;
+								gameObject.GetComponent<Rigidbody2D>().isKinematic = true;
 								this.position.x = this.position.x + this.bubbleSize;
 								BubbleMatrix.table [i, j] = true;
 								BubbleMatrix.colors [i, j] = this.bubbles [num].name;
@@ -389,7 +389,7 @@ public class BubbleMatrix : MonoBehaviour
 				for (int l = 0; l < this.columns; l++) {
 						int num = UnityEngine.Random.Range (0, this.bubblesVariety);
 						GameObject gameObject2 = (GameObject)Instantiate (this.bubbles [num], this.position, Quaternion.identity);
-						gameObject2.rigidbody2D.isKinematic = true;
+						gameObject2.GetComponent<Rigidbody2D>().isKinematic = true;
 						this.position.x = this.position.x + this.bubbleSize;
 						BubbleMatrix.table [0, l] = true;
 						BubbleMatrix.colors [0, l] = this.bubbles [num].name;

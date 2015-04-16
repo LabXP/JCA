@@ -15,7 +15,7 @@ public class Entrar : MonoBehaviour {
 
 
 	void OnMouseEnter(){
-		audio.PlayOneShot(HoverSound);
+		GetComponent<AudioSource>().PlayOneShot(HoverSound);
 	}
 	void OnMouseDown(){
 		LoginInfo[0] = text[0].GetComponent<InputField>().text;

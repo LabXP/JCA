@@ -42,7 +42,7 @@ public class Shoot : MonoBehaviour
 						randomMax = 5;
 				random = UnityEngine.Random.Range (0, randomMax);
 				bubbleInstance = (GameObject)UnityEngine.Object.Instantiate (bubble [random], bubblePosition.transform.position, Quaternion.identity);
-				bubbleInstance.rigidbody2D.isKinematic = true;
+				bubbleInstance.GetComponent<Rigidbody2D>().isKinematic = true;
 				bubbleInstance.transform.parent = bubblePosition.transform;
 				bubbleInstance.name = bubble [random].name;
 				audio = GetComponent<AudioSource> ();
@@ -91,8 +91,8 @@ public class Shoot : MonoBehaviour
 								roqueiraAnim.SetTrigger ("Play");
 
 								bubbleObject.transform.position = cannon.transform.position;
-								bubbleObject.rigidbody2D.isKinematic = false;
-								bubbleObject.rigidbody2D.velocity = cannon.transform.right * 20;
+								bubbleObject.GetComponent<Rigidbody2D>().isKinematic = false;
+								bubbleObject.GetComponent<Rigidbody2D>().velocity = cannon.transform.right * 20;
 								bubbleObject.transform.parent = null;
 					
 
@@ -112,7 +112,7 @@ public class Shoot : MonoBehaviour
 								bubbleInstance = (GameObject)Instantiate (bubble [random], bubblePosition.transform.position, Quaternion.identity);
 								bubbleInstance.name = bubble [random].name;
 
-								bubbleInstance.rigidbody2D.isKinematic = true;
+								bubbleInstance.GetComponent<Rigidbody2D>().isKinematic = true;
 								shot = false;
 						}
 				}

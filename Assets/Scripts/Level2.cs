@@ -29,7 +29,7 @@ public class Level2 : MonoBehaviour
 		void OnMouseEnter ()
 		{
 				anim.SetBool("Hover", true);
-				audio.PlayOneShot (HoverSound, 1f);
+				GetComponent<AudioSource>().PlayOneShot (HoverSound, 1f);
 				Hoverparticles[0].SetActive(true);
 				Hoverparticles[1].SetActive(true);
 				/*sr [0].sprite = Hover [0];
