@@ -10,28 +10,39 @@ public class Level2 : MonoBehaviour
 		public int StarCount;
 		public string LevelName;
 		private string level;
+		private Color levelColor = new Color(0.243f, 0.243f, 0.243f, 1.000f);
 		public AudioClip HoverSound;
 		public GameObject[] Hoverparticles;
 		private Animator anim;
+		public MeshRenderer[] LevelMaterial;
 
 		void Awake ()
-		{
+		{		
+				LevelMaterial = GetComponentsInChildren<MeshRenderer>() as MeshRenderer[];
 				anim = gameObject.GetComponentInChildren<Animator>();
 				level = Regex.Match (LevelName, @"\d+").Value;
+				if ((FindObjectOfType<StarController> ().starCount [int.Parse (level) - 1]) == 0){
+				//gameObject.SetActive(false);
+					foreach (MeshRenderer levelMat in LevelMaterial){
+						levelMat.material.color = levelColor;
+					}
+			}
 				
 		}
 		void OnMouseDown ()
 		{		
 				if ((FindObjectOfType<StarController> ().starCount [int.Parse (level) - 1]) > 0){
 				Application.LoadLevel (LevelName);
-			}
+			}	
 		}
 		void OnMouseEnter ()
 		{
+			if ((FindObjectOfType<StarController> ().starCount [int.Parse (level) - 1]) > 0){
 				anim.SetBool("Hover", true);
 				GetComponent<AudioSource>().PlayOneShot (HoverSound, 1f);
 				Hoverparticles[0].SetActive(true);
 				Hoverparticles[1].SetActive(true);
+			}
 				/*sr [0].sprite = Hover [0];
 				sr [1].sprite = Hover [1];*/
 		}

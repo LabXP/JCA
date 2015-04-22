@@ -4,7 +4,7 @@ using System.Collections;
 public class AudioController : MonoBehaviour
 {
 		public static AudioController instance = null;
-		private AudioSource[] SoundFX;
+		public AudioSource[] SoundFX;
 		public AudioClip[] AmbientMusic;
 		public bool FX, Music;
 		// Use this for initialization
@@ -55,7 +55,6 @@ public class AudioController : MonoBehaviour
 										soundFX.volume = 0.7f;	
 								}
 						}
-
 				}
 		}
 }
