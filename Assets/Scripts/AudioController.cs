@@ -12,6 +12,7 @@ public class AudioController : MonoBehaviour
 		{
 				
 		}
+
 		void Awake ()
 		{	
 			if (instance == null){
@@ -21,11 +22,19 @@ public class AudioController : MonoBehaviour
 			}
 
 				DontDestroyOnLoad (gameObject);
+
+			AudioSource[] sounds = FindObjectsOfType(typeof(AudioSource)) as AudioSource[];
+				foreach(AudioSource sound in sounds){
+				sound.panStereo = 0f;
+			}
+			
+		
 		}
 	
 		// Update is called once per frame
 		void Update ()
 		{
+				
 				SoundFX = FindObjectsOfType (typeof(AudioSource)) as AudioSource[];
 				if (!FX) {
 						foreach (AudioSource soundFX in SoundFX) {
