@@ -1,166 +1,120 @@
-using UnityEngine;
-using System;
+﻿using UnityEngine;
 using System.Collections;
-using System.Collections.Generic;
 
+/*input do jogador e atira bolhas*/
 public class Shoot : MonoBehaviour
 {
-	
-		public GameObject cannon;
-		public GameObject roqueira;
-		public GameObject bubblePosition;
-		public GameObject[] bubble;
-		[HideInInspector]
-		public bool
-				arrived = true;
-		public bool hitWall = false;
-		public Vector3 dir;
-		public string color;
-		public GameObject bubbleObject;
-		public AudioClip[] shoot;
-		public int level = 0;
 
-		private Vector2 mousePos;
-		private GameObject bubbleInstance;
-		private Vector3 diff;
-		private float rotZ = 90f;
-		private int random;
-		private AudioSource audio;
-		private Animator anim;
-		private int randomMax;
-		private Animator roqueiraAnim;
-		private bool shot = false;
-		//private float minClamp = 85, maxClamp = 275;
+	public GameObject cannon; //canhao
+	public Transform initialBubblePosition; //lugar do lado do canhao que mostra a proxima bolha
+	public bool canShoot = true;
+	public AudioSource bubbleAudioSource;
+	public AudioClip[] bubbleAudioClips;
 
-		void Start ()
-		{
-				if (level == 1)
-						randomMax = 3;
-				else if (level == 2)
-						randomMax = 4;
-				else if (level == 3)
-						randomMax = 5;
-				random = UnityEngine.Random.Range (0, randomMax);
-				bubbleInstance = (GameObject)UnityEngine.Object.Instantiate (bubble [random], bubblePosition.transform.position, Quaternion.identity);
-				bubbleInstance.GetComponent<Rigidbody2D>().isKinematic = true;
-				bubbleInstance.transform.parent = bubblePosition.transform;
-				bubbleInstance.name = bubble [random].name;
-				audio = GetComponent<AudioSource> ();
-				anim = cannon.GetComponent<Animator> ();
-				roqueiraAnim = roqueira.GetComponent<Animator> ();
-			
-		}
+	private Bubbles bubbleInstance, thrownBubble;	//bubbles usados no lançamento (proxima bolha, bolha sendo jogada)
+	private Vector3 diff; //controle do mouse
+	private float rotZ = 90f; //controle de rotaçao
+	private Animator cannonAnimator; //animator do canhao
+	private bool shot = false; //controla se uma bolha foi lançada
+	private Helper helper;
 
-		void Update ()
-		{
-
-				if (FindObjectOfType<GameController> ().playing) {
-						float h = Input.GetAxisRaw ("Horizontal");
-						float mouseMovement = Input.GetAxis ("Mouse X");
-
-						diff = Camera.main.ScreenToWorldPoint (Input.mousePosition) - cannon.transform.position;
-						//normalize difference  
-						diff.Normalize ();
-
-						//calculate rotation
-						if (mouseMovement != 0) {
-								rotZ = Mathf.Atan2 (diff.y, diff.x) * Mathf.Rad2Deg;
-						} else if (h != 0) {
-								rotZ -= h * 100 * Time.deltaTime;
-						}
-						//apply to object
-
-						//Debug.Log(rotZ);
-
-						if (rotZ > 170) {
-								rotZ = 170;
-						} else if (rotZ < 10) {
-								rotZ = 10;
-						} else {
-								cannon.transform.rotation = Quaternion.Euler (0, 0, rotZ);
-						}
-
-
-						if ((Input.GetMouseButtonDown (0) || Input.GetKeyDown ("space")) && arrived) {
-				
-								arrived = false;
-								color = bubble [random].name;
-								bubbleObject = bubbleInstance;
-								PlaySound ();
-								anim.SetTrigger ("Shoot");
-								roqueiraAnim.SetTrigger ("Play");
-
-								bubbleObject.transform.position = cannon.transform.position;
-								bubbleObject.GetComponent<Rigidbody2D>().isKinematic = false;
-								bubbleObject.GetComponent<Rigidbody2D>().velocity = cannon.transform.right * 20;
-								bubbleObject.transform.parent = null;
-					
-
-								shot = true;
-							
-								
-
-			
-								/*mousePos = Input.mousePosition;
-			Vector2 sp = Camera.main.WorldToScreenPoint(cannon.transform.position);
-			dir = (mousePos - sp).normalized;*/
-
-						}
-
-						if (arrived && shot) {
-								BubbleRandom ();
-								bubbleInstance = (GameObject)Instantiate (bubble [random], bubblePosition.transform.position, Quaternion.identity);
-								bubbleInstance.name = bubble [random].name;
-
-								bubbleInstance.GetComponent<Rigidbody2D>().isKinematic = true;
-								shot = false;
-						}
-				}
-		
-		}
-
-		void BubbleRandom ()
-		{
-				List<string> colors = FindObjectOfType<GameController> ().CheckIfColor ();
-				//for (int i = 0; i < colors.Count; i ++) {
-				//Debug.Log (colors [i]);
-				//}
-				random = UnityEngine.Random.Range (0, randomMax);
-				//Debug.Log ("1 " + bubble [random].name);
-				if (!colors.Contains (bubble [random].name)) {
-						//Debug.Log ("hi");
-						for (int i = 0; i < bubble.Length; i ++) {
-								if (colors.Contains (bubble [i].name)) {
-										random = i;
-										//Debug.Log ("2 " + bubble [random].name);
-								}
-						}
-				}
-		}
-	
-		void PlaySound ()
-		{
-				if (bubble [random].name == "Blue") {
-						audio.clip = shoot [0];
-				} else if (bubble [random].name == "Green") {
-						audio.clip = shoot [1];
-				} else if (bubble [random].name == "Purple") {
-						audio.clip = shoot [2];
-				} else if (bubble [random].name == "Red") {
-						audio.clip = shoot [3];
-				} else if (bubble [random].name == "Yellow") {
-						audio.clip = shoot [4];
-				}
-				audio.Play ();
-		}
-
-		/*public static float ClampAngle (float angle, float min, float max)
+	void Start ()
 	{
-		if (angle < -360F)
-			angle += 360F;
-		if (angle > 360F)
-			angle -= 360F;
-		return Mathf.Clamp (angle, min, max);
-	}*/
+		//cria a bolha inicial
+		bubbleInstance = new Bubbles (initialBubblePosition.position.x, initialBubblePosition.position.y);
+		cannonAnimator = cannon.GetComponent<Animator> ();
+		helper = GameObject.FindObjectOfType<Helper> ();
+	}
 
+	void FixedUpdate ()
+	{
+		if (GameController.playing) {
+			if (canShoot) {
+				//controle de mouse e teclado (TODO CONTROLE COM TOUCH)
+				float h = Input.GetAxisRaw ("Horizontal");
+				float mouseMovement = Input.GetAxis ("Mouse X");
+
+				diff = Camera.main.ScreenToWorldPoint (Input.mousePosition) - cannon.transform.position;
+				//normalize difference  
+				diff.Normalize ();
+
+				//calculate rotation
+				if (mouseMovement != 0) {
+					rotZ = Mathf.Atan2 (diff.y, diff.x) * Mathf.Rad2Deg;
+				} else if (h != 0) {
+					rotZ -= h * 100 * Time.deltaTime;
+				}
+				//apply to object
+
+				//Debug.Log(rotZ);
+
+				if (rotZ > 170) {
+					rotZ = 170;
+				} else if (rotZ < 10) {
+					rotZ = 10;
+				} else {
+					cannon.transform.rotation = Quaternion.Euler (0, 0, rotZ);
+				}
+			}
+			//atira a bolha
+			if ((Input.GetMouseButtonDown (0) || Input.GetKey ("space")) && shot == false && canShoot == true) {
+
+				canShoot = false;
+
+				//faz a bolha se mover
+				thrownBubble = bubbleInstance;
+				thrownBubble.bubbleObject.GetComponent<Rigidbody2D> ().isKinematic = false;
+				thrownBubble.bubbleObject.transform.position = cannon.transform.position;
+				thrownBubble.bubbleObject.GetComponent<Rigidbody2D> ().velocity = cannon.transform.right * 17;
+				cannonAnimator.SetTrigger ("Shoot");
+
+				PlaySound (thrownBubble);
+
+				shot = true;
+			}
+
+		}
+		//faz a bolha parar
+		if (shot && !thrownBubble.bubbleObjectController.isMoving) {
+			//	Debug.Log (thrownBubble.bubbleObjectController.isMoving);
+			if (thrownBubble.bubbleObject != null) {
+				thrownBubble.bubbleObject.GetComponent<Rigidbody2D> ().isKinematic = true;
+				helper.TakeATurn (thrownBubble);
+			}
+		}
+
+		if (canShoot && shot) {
+			//cria a proxima bolha
+			bubbleInstance = new Bubbles (initialBubblePosition.position.x, initialBubblePosition.position.y, helper.ShootableColor ());
+			shot = false;
+		}
+	}
+
+	void PlaySound (Bubbles bubble)
+	{
+		string color = bubble.getColor ();
+
+		switch (color) {
+		case "Blue":
+			bubbleAudioSource.clip = bubbleAudioClips [0];
+			bubbleAudioSource.Play ();
+			break;
+		case "Red":
+			bubbleAudioSource.clip = bubbleAudioClips [1];
+			bubbleAudioSource.Play ();
+			break;
+		case "Yellow":
+			bubbleAudioSource.clip = bubbleAudioClips [2];
+			bubbleAudioSource.Play ();
+			break;
+		case "Green":
+			bubbleAudioSource.clip = bubbleAudioClips [3];
+			bubbleAudioSource.Play ();
+			break;
+		case "Purple":
+			bubbleAudioSource.clip = bubbleAudioClips [4];
+			bubbleAudioSource.Play ();
+			break;
+		}
+	}
 }
