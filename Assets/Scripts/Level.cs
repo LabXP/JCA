@@ -24,7 +24,7 @@ public class Level : MonoBehaviour
 		}
 		void OnMouseEnter ()
 		{
-				GetComponent<AudioSource>().PlayOneShot (HoverSound, 1f);
+				audio.PlayOneShot (HoverSound, 1f);
 				sr [0].sprite = Hover [0];
 				sr [1].sprite = Hover [1];
 		}

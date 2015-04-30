@@ -8,7 +8,7 @@ public class MainMenuInGame : MonoBehaviour
 
 		void OnMouseEnter ()
 		{
-				GetComponent<AudioSource>().PlayOneShot (HoverSound, 1f);
+				audio.PlayOneShot (HoverSound, 1f);
 				Hover.SetActive (true);
 				FindObjectOfType<GameController> ().playing = false;
 		}

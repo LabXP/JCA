@@ -129,7 +129,7 @@ public class GameController : MonoBehaviour
 						for (int j = 0; j < column; j++) {
 								//Instancia bolha
 								GameObject bubbleInstance = InstantiateBubble (i, j);
-								bubbleInstance.GetComponent<Rigidbody2D>().isKinematic = true;
+								bubbleInstance.rigidbody2D.isKinematic = true;
 								//Adiciona na lista
 								bubbles [i, j] = bubbleInstance;
 						}
@@ -516,7 +516,7 @@ public class GameController : MonoBehaviour
 				for (int l = 0; l < this.columns; l++) {
 						int num = UnityEngine.Random.Range (0, this.bubblesVariety);
 						GameObject gameObject2 = (GameObject)Instantiate (this.bubblesPrefab [num], position, Quaternion.identity);
-						gameObject2.GetComponent<Rigidbody2D>().isKinematic = true;
+						gameObject2.rigidbody2D.isKinematic = true;
 						position.x = position.x + this.bubbleSize;
 						bubbles [0, l] = gameObject2;
 				}

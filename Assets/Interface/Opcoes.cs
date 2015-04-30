@@ -15,7 +15,7 @@ public class Opcoes : MonoBehaviour {
 		gameObject.GetComponent<SpriteRenderer>().sprite = hover;
 	}
 	void OnMouseEnter(){
-		GetComponent<AudioSource>().PlayOneShot(HoverSound);
+		audio.PlayOneShot(HoverSound);
 	}
 	void OnMouseExit(){
 		gameObject.GetComponent<SpriteRenderer>().sprite = NotHover;

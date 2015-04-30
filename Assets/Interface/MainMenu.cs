@@ -15,7 +15,7 @@ public class MainMenu : MonoBehaviour {
 		
 	}
 	void OnMouseEnter(){
-		GetComponent<AudioSource>().PlayOneShot(HoverSound);
+		audio.PlayOneShot(HoverSound);
 	}
 	void OnMouseExit(){
 		gameObject.GetComponent<SpriteRenderer>().sprite = NotHover;

@@ -28,10 +28,10 @@ public class LineFollow : MonoBehaviour
 
 		
 						if (mouseMovement != 0 || h != 0) {
-								GetComponent<Rigidbody2D>().isKinematic = false;
-								GetComponent<Collider2D>().isTrigger = false;
+								rigidbody2D.isKinematic = false;
+								collider2D.isTrigger = false;
 								transform.position = initialPosition;
-								GetComponent<Rigidbody2D>().velocity = cannon.transform.right * 50;
+								rigidbody2D.velocity = cannon.transform.right * 50;
 						}
 						if (transform.position == initialPosition) {
 								trailRenderer.time = 0f;
@@ -47,8 +47,8 @@ public class LineFollow : MonoBehaviour
 		void OnCollisionEnter2D (Collision2D obj)
 		{
 				if (obj.collider.tag == "Bubble" || obj.collider.tag == "Roof") {
-						GetComponent<Collider2D>().isTrigger = true;
-						GetComponent<Rigidbody2D>().isKinematic = true;
+						collider2D.isTrigger = true;
+						rigidbody2D.isKinematic = true;
 				}
 		}
 

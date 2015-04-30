@@ -7,7 +7,7 @@ public class BackNo : MonoBehaviour {
 	public AudioClip HoverSound;
 
 	void OnMouseEnter(){
-		GetComponent<AudioSource>().PlayOneShot(HoverSound, 1f);
+		audio.PlayOneShot(HoverSound, 1f);
 		gameObject.GetComponent<SpriteRenderer>().sprite = Hover;
 	}
 	void OnMouseExit(){

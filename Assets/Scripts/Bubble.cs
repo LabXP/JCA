@@ -15,8 +15,8 @@ public class Bubble : MonoBehaviour
 						FindObjectOfType<Shoot> ().dir.x *= -1;
 				}
 				if (obj.gameObject.tag == "Bubble" || obj.gameObject.tag == "Roof") {
-						if (!GetComponent<Rigidbody2D>().isKinematic) {
-								GetComponent<Rigidbody2D>().isKinematic = true;
+						if (!rigidbody2D.isKinematic) {
+								rigidbody2D.isKinematic = true;
 								Position ();
 								//FindObjectOfType<Shoot> ().arrived = true;
 								FindObjectOfType<Shoot> ().hitWall = false;
