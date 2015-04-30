@@ -4,18 +4,18 @@ using System.Collections;
 public class Batata : MonoBehaviour
 {
 
-		// Use this for initialization
-		void Start ()
-		{
+	// Use this for initialization
+	void Start ()
+	{
 	
-		}
+	}
 	
-		// Update is called once per frame
-		void Update ()
-		{
+	// Update is called once per frame
+	void Update ()
+	{
 		
-				if (gameObject.activeSelf) {
-						FindObjectOfType<GameController> ().playing = false;
-				}
+		if (gameObject.activeSelf) {
+			GameController.playing = false;
 		}
+	}
 }
