@@ -9,8 +9,7 @@ public class Helper : MonoBehaviour
 
 	public bool hitBubbles = false;
 	public int shotBubbles = 0, extraBubbles = 0;
-	public AudioSource audioSource;
-	public AudioClip explosionAudioClip, fallingAudioClip;
+	public AudioSource explosionAudioClip, fallingAudioClip;
 
 	void Start ()
 	{
@@ -461,13 +460,14 @@ public class Helper : MonoBehaviour
 
 		if (bubblesToDestroy.Count >= 3) {
 			hitBubbles = true;
-			audioSource.clip = explosionAudioClip;
-			audioSource.Play ();
+			explosionAudioClip.Play ();
 
 			for (int i = 0; i < bubblesToDestroy.Count; i++) {
 				//Debug.Log (bubblesToDestroy [i].getColor ());
 				GameObject child = game.matrix.bubbleMatrix [rows [i], columns [i]].bubbleObject.transform.FindChild ("explosion").gameObject;
 				child.SetActive (true);
+				Collider2D bubbleCollider = game.matrix.bubbleMatrix [rows [i], columns [i]].bubbleObject.GetComponent<Collider2D> ();
+				bubbleCollider.enabled = false;
 				Destroy (game.matrix.bubbleMatrix [rows [i], columns [i]].bubbleObject, 0.4f);
 				game.matrix.bubbleMatrix [rows [i], columns [i]] = null;
 			}
@@ -490,6 +490,8 @@ public class Helper : MonoBehaviour
 						child.SetActive (true);
 						extraBubbles++;
 						//Debug.Log (i + "\t" + j);
+						Collider2D bubbleCollider = game.matrix.bubbleMatrix [i, j].bubbleObject.GetComponent<Collider2D> ();
+						bubbleCollider.enabled = false;
 						Destroy (game.matrix.bubbleMatrix [i, j].bubbleObject, 0.6f);
 						game.matrix.bubbleMatrix [i, j] = null;
 						playSound = true;
@@ -500,8 +502,7 @@ public class Helper : MonoBehaviour
 		}
 
 		if (playSound) {
-			audioSource.clip = fallingAudioClip;
-			audioSource.Play ();
+			fallingAudioClip.Play ();
 		}
 	}
 
