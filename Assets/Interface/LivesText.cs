@@ -11,11 +11,11 @@ public class LivesText : MonoBehaviour {
 		posicao.y = (float) Screen.height / (Screen.height - (Screen.height / 3000));
 		transform.position = posicao;*/
 		transform.position = new Vector3 (0.09f, 0.9f, 0);
-		gameObject.guiText.fontSize = (int) Screen.width / 20;
+		gameObject.GetComponent<GUIText>().fontSize = (int) Screen.width / 20;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		gameObject.guiText.text = ":" + LivesCount;
+		gameObject.GetComponent<GUIText>().text = ":" + LivesCount;
 	}
 }

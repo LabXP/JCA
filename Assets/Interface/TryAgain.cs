@@ -14,7 +14,7 @@ public class TryAgain : MonoBehaviour
 		}
 		void OnMouseEnter ()
 		{
-				audio.PlayOneShot (HoverSound);
+				GetComponent<AudioSource>().PlayOneShot (HoverSound);
 		}
 		void OnMouseExit ()
 		{

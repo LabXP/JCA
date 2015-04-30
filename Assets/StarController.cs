@@ -23,7 +23,7 @@ public class StarController : MonoBehaviour
 		
 				DontDestroyOnLoad (gameObject);
 				
-				Debug.Log (level);
+//				Debug.Log (level);
 		}
 	
 		// Update is called once per frame
@@ -32,7 +32,7 @@ public class StarController : MonoBehaviour
 				//print ("a"+starCount [int.Parse (level)]);
 				//print (batata);
 				level = Regex.Match(Application.loadedLevelName, @"\d+").Value;
-				print (level+"a");
+//				print (level+"a");
 				if (FindObjectOfType<GameController> () != null && FindObjectOfType<GameController> ().win) {
 						batata = FindObjectOfType<GameController> ().bubblesLeft;
 						Stars ();

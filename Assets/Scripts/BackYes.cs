@@ -8,7 +8,7 @@ public class BackYes : MonoBehaviour
 
 		void OnMouseEnter ()
 		{
-				audio.PlayOneShot (HoverSound, 1f);
+				GetComponent<AudioSource>().PlayOneShot (HoverSound, 1f);
 				gameObject.GetComponent<SpriteRenderer> ().sprite = Hover;
 		}
 		void OnMouseExit ()
