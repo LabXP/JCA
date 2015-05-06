@@ -466,8 +466,6 @@ public class Helper : MonoBehaviour
 				//Debug.Log (bubblesToDestroy [i].getColor ());
 				GameObject child = game.matrix.bubbleMatrix [rows [i], columns [i]].bubbleObject.transform.FindChild ("explosion").gameObject;
 				child.SetActive (true);
-				Collider2D bubbleCollider = game.matrix.bubbleMatrix [rows [i], columns [i]].bubbleObject.GetComponent<Collider2D> ();
-				bubbleCollider.enabled = false;
 				Destroy (game.matrix.bubbleMatrix [rows [i], columns [i]].bubbleObject, 0.4f);
 				game.matrix.bubbleMatrix [rows [i], columns [i]] = null;
 			}
@@ -490,8 +488,6 @@ public class Helper : MonoBehaviour
 						child.SetActive (true);
 						extraBubbles++;
 						//Debug.Log (i + "\t" + j);
-						Collider2D bubbleCollider = game.matrix.bubbleMatrix [i, j].bubbleObject.GetComponent<Collider2D> ();
-						bubbleCollider.enabled = false;
 						Destroy (game.matrix.bubbleMatrix [i, j].bubbleObject, 0.6f);
 						game.matrix.bubbleMatrix [i, j] = null;
 						playSound = true;

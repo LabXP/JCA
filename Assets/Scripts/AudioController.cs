@@ -38,21 +38,21 @@ public class AudioController : MonoBehaviour
 				SoundFX = FindObjectsOfType (typeof(AudioSource)) as AudioSource[];
 				if (!FX) {
 						foreach (AudioSource soundFX in SoundFX) {
-								if (soundFX.clip != AmbientMusic [0] && soundFX.clip != AmbientMusic [1] && soundFX.clip != AmbientMusic [2] && soundFX.clip != AmbientMusic [3] && soundFX.clip != AmbientMusic [4]) {
+								if (soundFX.clip != AmbientMusic [0] && soundFX.clip != AmbientMusic [1] && soundFX.clip != AmbientMusic [2] && soundFX.clip != AmbientMusic [3]) {
 										soundFX.volume = 0;	
 								}
 						}
 				}
 				if (FX) {
 						foreach (AudioSource soundFX in SoundFX) {
-								if (soundFX.clip != AmbientMusic [0] && soundFX.clip != AmbientMusic [1] && soundFX.clip != AmbientMusic [2] && soundFX.clip != AmbientMusic [3] && soundFX.clip != AmbientMusic [4]) {
+								if (soundFX.clip != AmbientMusic [0] && soundFX.clip != AmbientMusic [1] && soundFX.clip != AmbientMusic [2] && soundFX.clip != AmbientMusic [3]) {
 										soundFX.volume = 1f;	
 								}
 						}
 				}
 				if (!Music) {
 						foreach (AudioSource soundFX in SoundFX) {
-								if (soundFX.clip == AmbientMusic [0] || soundFX.clip == AmbientMusic [1] || soundFX.clip == AmbientMusic [2] || soundFX.clip == AmbientMusic [3] || soundFX.clip == AmbientMusic [4]) {
+								if (soundFX.clip == AmbientMusic [0] || soundFX.clip == AmbientMusic [1] || soundFX.clip == AmbientMusic [2] || soundFX.clip == AmbientMusic [3]) {
 										soundFX.volume = 0;	
 								}
 						}
@@ -60,7 +60,7 @@ public class AudioController : MonoBehaviour
 				}
 				if (Music) {
 						foreach (AudioSource soundFX in SoundFX) {
-								if (soundFX.clip == AmbientMusic [0] || soundFX.clip == AmbientMusic [1] || soundFX.clip == AmbientMusic [2] || soundFX.clip == AmbientMusic [3] || soundFX.clip == AmbientMusic [4]) {
+								if (soundFX.clip == AmbientMusic [0] || soundFX.clip == AmbientMusic [1] || soundFX.clip == AmbientMusic [2] || soundFX.clip == AmbientMusic [3]) {
 										soundFX.volume = 0.7f;	
 								}
 						}
