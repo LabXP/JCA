@@ -1,0 +1,33 @@
+﻿using UnityEngine;
+using System.Collections;
+
+public class Matrix
+{
+	private Bubbles[,] _bubbleMatrix;
+
+	public Matrix (int rows, int columns, Vector2 initialPosition, int distance, int bubblesVariety)
+	{
+		bool fullRow = true;
+		Vector2 newPosition = initialPosition;
+		int newColumns = columns;
+
+		for (int i = 0; i < rows; i++) {
+			if (fullRow) {
+				newPosition = initialPosition;
+				newColumns = columns;
+			} else {
+				newPosition.x = initialPosition.x + 0.5f;
+				newColumns = columns - 1;
+			}
+			for (int j = 0; j < newColumns; j++) {
+				_bubbleMatrix [i, j] = new Bubbles (bubblesVariety);
+				//GameObject bubblePrefab = Instantiate (Resources.Load (" ")) as GameObject;
+				//bubblePrefab.transform.position = newPosition;
+				newPosition.x += distance;
+				Debug.Log ("New");
+			}
+			newPosition.y += distance;
+			fullRow = !fullRow;
+		}
+	}
+}
