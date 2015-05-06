@@ -58,6 +58,7 @@ public class Helper : MonoBehaviour
 		int column = PositionToColumn (bubblePosition, row);
 		//Debug.Log(row + "\t" + column);
 
+
 		//Se a posição for válida
 		if (IsPositionValid (row, column) && IsConnectedToTop (row, column)) {
 			game.matrix.bubbleMatrix [row, column] = bubble;
@@ -72,9 +73,12 @@ public class Helper : MonoBehaviour
 			FindNewValidPosition (row, column, bubblePosition, bubble);
 		}
 
+		bubble.bubbleObject.tag = "Bubble";
+
 		//Debug.Log(game.matrix.bubbleMatrix[row, column].getColor());
 		DestroyTrios (row, column);
 		DestroyHangingBubbles ();
+
 
 		gameController.AfterATurn ();
 	}
@@ -170,6 +174,7 @@ public class Helper : MonoBehaviour
 	//Verifica se essa posiçao é valida
 	bool IsPositionValid (int row, int column)
 	{
+	
 		try {
 			if (game.matrix.bubbleMatrix [row, column] != null) {
 				return false;
@@ -184,6 +189,7 @@ public class Helper : MonoBehaviour
 	//Verifica se essa bolha esta conectada ao topo (nao pendurada)
 	bool IsConnectedToTop (int row, int column)
 	{
+
 		bool isConnected = false;
 		List<Bubbles> bubbleHelperList = new List<Bubbles> ();
 		List<int> rows = new List<int> ();
@@ -284,6 +290,8 @@ public class Helper : MonoBehaviour
             Debug.Log(isConnected);
         }*/
 
+		CheckForBugs ();
+		Debug.Log ("sup2");
 		return isConnected;
 	}
 
@@ -464,6 +472,7 @@ public class Helper : MonoBehaviour
 
 			for (int i = 0; i < bubblesToDestroy.Count; i++) {
 				//Debug.Log (bubblesToDestroy [i].getColor ());
+				game.matrix.bubbleMatrix [rows [i], columns [i]].bubbleObject.tag = "Untagged";
 				GameObject child = game.matrix.bubbleMatrix [rows [i], columns [i]].bubbleObject.transform.FindChild ("explosion").gameObject;
 				child.SetActive (true);
 				Destroy (game.matrix.bubbleMatrix [rows [i], columns [i]].bubbleObject, 0.4f);
@@ -484,6 +493,7 @@ public class Helper : MonoBehaviour
 				try {
 					if (game.matrix.bubbleMatrix [i, j] != null && !IsConnectedToTop (i, j)) {
 						// bubblesToDestroy.Add(game.matrix.bubbleMatrix[i, j]);
+						game.matrix.bubbleMatrix [i, j].bubbleObject.tag = "Untagged";
 						GameObject child = game.matrix.bubbleMatrix [i, j].bubbleObject.transform.FindChild ("caindo").gameObject;
 						child.SetActive (true);
 						extraBubbles++;
@@ -564,5 +574,33 @@ public class Helper : MonoBehaviour
 
 		// Debug.Log(colors[random]);
 		return colors [random];
+	}
+
+	public void CheckForBugs ()
+	{
+
+		GameObject[] bubblesGameObjects;
+		bubblesGameObjects = GameObject.FindGameObjectsWithTag ("Bubble");
+		BubblesController bubbleObjectController;
+
+		int row, column;
+
+		Debug.Log ("sup");
+
+		for (int i = 0; i < bubblesGameObjects.Length; i ++) {
+			row = PositionToRow (bubblesGameObjects [i].transform.position);
+			column = PositionToColumn (bubblesGameObjects [i].transform.position, row);
+			bubbleObjectController = bubblesGameObjects [i].GetComponent<BubblesController> ();
+
+
+			//Debug.Log (row + "\t" + column + "\t" + game.matrix.bubbleMatrix [row, column]);
+
+			if (bubbleObjectController.isMoving == false && game.matrix.bubbleMatrix [row, column] == null) {
+				Debug.Log (row + "\t" + column + "\t" + game.matrix.bubbleMatrix [row, column]);
+				//Debug.Log (bubblesGameObjects [i].name);
+
+				//Destroy (bubblesGameObjects [i], 0.4f);
+			}
+		}
 	}
 }
