@@ -4,7 +4,7 @@ using System.Collections;
 public class BubblesController : MonoBehaviour
 {
 	public bool isMoving = true;
-	private int rotationLock = 0;
+	public int rotationLock = 0;
 
 	//Mantem a rotação no zero
 	void Update ()
