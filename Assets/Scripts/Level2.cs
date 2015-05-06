@@ -11,8 +11,6 @@ public class Level2 : MonoBehaviour
 		public string LevelName;
 		private string level;
 		private Color levelColor = new Color(0.243f, 0.243f, 0.243f, 1.000f);
-		private Color ableLevelColor = new Color (1f, 1f, 1f, 1.000f);
-		private bool ColorChanged = false;
 		public AudioClip HoverSound;
 		public GameObject[] Hoverparticles;
 		private Animator anim;
@@ -27,13 +25,9 @@ public class Level2 : MonoBehaviour
 				//gameObject.SetActive(false);
 					foreach (MeshRenderer levelMat in LevelMaterial){
 						levelMat.material.color = levelColor;
-					} 
-				}
-					
+					}
+			}
 				
-		}
-		void Start(){
-
 		}
 		void OnMouseDown ()
 		{		
@@ -63,14 +57,7 @@ public class Level2 : MonoBehaviour
 				*/
 		}
 		void Update ()
-		{	
-			if ((FindObjectOfType<StarController> ().starCount [int.Parse (level) - 1]) > 0 && !ColorChanged){
-				ColorChanged = true;
-				foreach (MeshRenderer levelMat in LevelMaterial){
-					levelMat.material.color = ableLevelColor;
-				} 
-			}
-	
+		{
 				/*switch (FindObjectOfType<StarController> ().starCount [int.Parse (level)]) {
 				case 0:
 						Stars [0].SetActive (false);

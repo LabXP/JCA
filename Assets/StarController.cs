@@ -4,7 +4,7 @@ using System.Text.RegularExpressions;
 
 public class StarController : MonoBehaviour
 {
-		public static StarController StarInstance = null;
+		public static StarController instance = null;
 		public int[]
 				starCount = new int[31];
 		private int batata = 0;
@@ -15,9 +15,9 @@ public class StarController : MonoBehaviour
 		// Use this for initialization
 		void Awake ()
 		{
-			if (StarInstance == null){
-				StarInstance = this;
-			} else if (StarInstance != this){
+			if (instance == null){
+				instance = this;
+			} else if (instance != this){
 				Destroy(gameObject);
 			}
 		
