@@ -1,7 +1,5 @@
 fileFormatVersion: 2
 guid: 7350400d79379466db7c92b6ff53a5f6
-timeCreated: 1430427047
-licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: spritesheetLogin_0
@@ -12,8 +10,6 @@ TextureImporter:
     21300010: spritesheetLogin_5
     21300012: spritesheetLogin_6
     21300014: spritesheetLogin_7
-    21300016: SpritesheetLogin_0
-    21300018: SpritesheetLogin_1
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -32,9 +28,6 @@ TextureImporter:
   isReadable: 0
   grayScaleToAlpha: 0
   generateCubemap: 0
-  cubemapConvolution: 0
-  cubemapConvolutionSteps: 8
-  cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
   textureFormat: -3
   maxTextureSize: 2048
@@ -45,7 +38,6 @@ TextureImporter:
     wrapMode: 1
   nPOTScale: 0
   lightmap: 0
-  rGBM: 0
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
@@ -63,93 +55,81 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 787
-        width: 1280
-        height: 799
+        y: 659
+        width: 1290
+        height: 813
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: spritesheetLogin_1
       rect:
         serializedVersion: 2
-        x: 228
-        y: 206
+        x: 16
+        y: 496
         width: 364
-        height: 109
+        height: 129
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: spritesheetLogin_2
       rect:
         serializedVersion: 2
-        x: 228
-        y: 40
-        width: 364
-        height: 109
+        x: 418
+        y: 496
+        width: 363
+        height: 129
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: spritesheetLogin_3
       rect:
         serializedVersion: 2
-        x: 820
-        y: 332
-        width: 217
-        height: 58
+        x: 853
+        y: 517
+        width: 222
+        height: 64
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: spritesheetLogin_4
       rect:
         serializedVersion: 2
-        x: 576
-        y: 332
-        width: 217
-        height: 58
+        x: 1098
+        y: 517
+        width: 221
+        height: 64
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: spritesheetLogin_5
       rect:
         serializedVersion: 2
-        x: 247
-        y: 584
+        x: 13
+        y: 328
         width: 797
         height: 149
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: spritesheetLogin_6
       rect:
         serializedVersion: 2
-        x: 239
-        y: 398
+        x: 817
+        y: 328
         width: 797
         height: 149
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: SpritesheetLogin_0
+    - name: spritesheetLogin_7
       rect:
         serializedVersion: 2
-        x: 682
-        y: 205
-        width: 364
-        height: 109
+        x: 0
+        y: 32
+        width: 824
+        height: 276
       alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: SpritesheetLogin_1
-      rect:
-        serializedVersion: 2
-        x: 682
-        y: 40
-        width: 364
-        height: 109
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
-  assetBundleName: 
-  assetBundleVariant: 
