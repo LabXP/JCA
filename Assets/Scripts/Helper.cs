@@ -597,7 +597,7 @@ public class Helper : MonoBehaviour
 
 			if (bubbleObjectController.isMoving == false && game.matrix.bubbleMatrix [row, column] == null) {
 				Debug.Log (row + "\t" + column + "\t" + game.matrix.bubbleMatrix [row, column]);
-				//Debug.Log (bubblesGameObjects [i].name);
+				Debug.Log (bubblesGameObjects [i].name);
 
 				//Destroy (bubblesGameObjects [i], 0.4f);
 			}
