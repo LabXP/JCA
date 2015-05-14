@@ -1,0 +1,388 @@
+fileFormatVersion: 2
+guid: e99ec36a0473b44dbbfec9e716972141
+timeCreated: 1431647270
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Spritesheet_Roqueira_0
+    21300002: Spritesheet_Roqueira_1
+    21300004: Spritesheet_Roqueira_2
+    21300006: Spritesheet_Roqueira_3
+    21300008: Spritesheet_Roqueira_4
+    21300010: Spritesheet_Roqueira_5
+    21300012: Spritesheet_Roqueira_6
+    21300014: Spritesheet_Roqueira_7
+    21300016: Spritesheet_Roqueira_8
+    21300018: Spritesheet_Roqueira_9
+    21300020: Spritesheet_Roqueira_10
+    21300022: Spritesheet_Roqueira_11
+    21300024: Spritesheet_Roqueira_12
+    21300026: Spritesheet_Roqueira_13
+    21300028: Spritesheet_Roqueira_14
+    21300030: Spritesheet_Roqueira_15
+    21300032: Spritesheet_Roqueira_16
+    21300034: Spritesheet_Roqueira_17
+    21300036: Spritesheet_Roqueira_18
+    21300038: Spritesheet_Roqueira_19
+    21300040: Spritesheet_Roqueira_20
+    21300042: Spritesheet_Roqueira_21
+    21300044: Spritesheet_Roqueira_22
+    21300046: Spritesheet_Roqueira_23
+    21300048: Spritesheet_Roqueira_24
+    21300050: Spritesheet_Roqueira_25
+    21300052: Spritesheet_Roqueira_26
+    21300054: Spritesheet_Roqueira_27
+    21300056: Spritesheet_Roqueira_28
+    21300058: Spritesheet_Roqueira_29
+    21300060: Spritesheet_Roqueira_30
+    21300062: Spritesheet_Roqueira_31
+    21300064: Spritesheet_Roqueira_32
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 4096
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Spritesheet_Roqueira_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2268
+        width: 454
+        height: 567
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Spritesheet_Roqueira_1
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 2268
+        width: 454
+        height: 567
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Spritesheet_Roqueira_2
+      rect:
+        serializedVersion: 2
+        x: 908
+        y: 2268
+        width: 454
+        height: 567
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Spritesheet_Roqueira_3
+      rect:
+        serializedVersion: 2
+        x: 1362
+        y: 2268
+        width: 454
+        height: 567
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Spritesheet_Roqueira_4
+      rect:
+        serializedVersion: 2
+        x: 1816
+        y: 2268
+        width: 454
+        height: 567
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Spritesheet_Roqueira_5
+      rect:
+        serializedVersion: 2
+        x: 2270
+        y: 2268
+        width: 454
+        height: 567
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Spritesheet_Roqueira_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1701
+        width: 454
+        height: 567
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Spritesheet_Roqueira_7
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 1701
+        width: 454
+        height: 567
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Spritesheet_Roqueira_8
+      rect:
+        serializedVersion: 2
+        x: 908
+        y: 1701
+        width: 454
+        height: 567
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Spritesheet_Roqueira_9
+      rect:
+        serializedVersion: 2
+        x: 1362
+        y: 1701
+        width: 454
+        height: 567
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Spritesheet_Roqueira_10
+      rect:
+        serializedVersion: 2
+        x: 1816
+        y: 1701
+        width: 454
+        height: 567
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Spritesheet_Roqueira_11
+      rect:
+        serializedVersion: 2
+        x: 2270
+        y: 1701
+        width: 454
+        height: 567
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Spritesheet_Roqueira_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1134
+        width: 454
+        height: 567
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Spritesheet_Roqueira_13
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 1134
+        width: 454
+        height: 567
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Spritesheet_Roqueira_14
+      rect:
+        serializedVersion: 2
+        x: 908
+        y: 1134
+        width: 454
+        height: 567
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Spritesheet_Roqueira_15
+      rect:
+        serializedVersion: 2
+        x: 1362
+        y: 1134
+        width: 454
+        height: 567
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Spritesheet_Roqueira_16
+      rect:
+        serializedVersion: 2
+        x: 1816
+        y: 1134
+        width: 454
+        height: 567
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Spritesheet_Roqueira_17
+      rect:
+        serializedVersion: 2
+        x: 2270
+        y: 1134
+        width: 454
+        height: 567
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Spritesheet_Roqueira_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 567
+        width: 454
+        height: 567
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Spritesheet_Roqueira_19
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 567
+        width: 454
+        height: 567
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Spritesheet_Roqueira_20
+      rect:
+        serializedVersion: 2
+        x: 908
+        y: 567
+        width: 454
+        height: 567
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Spritesheet_Roqueira_21
+      rect:
+        serializedVersion: 2
+        x: 1362
+        y: 567
+        width: 454
+        height: 567
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Spritesheet_Roqueira_22
+      rect:
+        serializedVersion: 2
+        x: 1816
+        y: 567
+        width: 454
+        height: 567
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Spritesheet_Roqueira_23
+      rect:
+        serializedVersion: 2
+        x: 2270
+        y: 567
+        width: 454
+        height: 567
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Spritesheet_Roqueira_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 454
+        height: 567
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Spritesheet_Roqueira_25
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 0
+        width: 454
+        height: 567
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Spritesheet_Roqueira_26
+      rect:
+        serializedVersion: 2
+        x: 908
+        y: 0
+        width: 454
+        height: 567
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Spritesheet_Roqueira_27
+      rect:
+        serializedVersion: 2
+        x: 1362
+        y: 0
+        width: 454
+        height: 567
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Spritesheet_Roqueira_28
+      rect:
+        serializedVersion: 2
+        x: 1816
+        y: 0
+        width: 454
+        height: 567
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Spritesheet_Roqueira_29
+      rect:
+        serializedVersion: 2
+        x: 2270
+        y: 0
+        width: 454
+        height: 567
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

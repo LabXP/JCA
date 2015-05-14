@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 
 Project("{2869D334-4C7B-759F-E38A-F3B4430B766A}") = "JCA", "Assembly-CSharp.csproj", "{A13DFFD0-CFC6-C6E5-ED84-92B2DCEF989D}"
 EndProject
+Project("{2869D334-4C7B-759F-E38A-F3B4430B766A}") = "JCA", "Assembly-CSharp-Editor.csproj", "{290A86EB-02DB-2694-2639-6FC15959089E}"
+EndProject
 Project("{2869D334-4C7B-759F-E38A-F3B4430B766A}") = "JCA", "Assembly-UnityScript-firstpass.unityproj", "{DEF7EECE-2313-42A3-FF5C-9B8CD4636BF3}"
 EndProject
 Global
@@ -15,6 +17,10 @@ Global
 		{A13DFFD0-CFC6-C6E5-ED84-92B2DCEF989D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A13DFFD0-CFC6-C6E5-ED84-92B2DCEF989D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A13DFFD0-CFC6-C6E5-ED84-92B2DCEF989D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{290A86EB-02DB-2694-2639-6FC15959089E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{290A86EB-02DB-2694-2639-6FC15959089E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{290A86EB-02DB-2694-2639-6FC15959089E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{290A86EB-02DB-2694-2639-6FC15959089E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{DEF7EECE-2313-42A3-FF5C-9B8CD4636BF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{DEF7EECE-2313-42A3-FF5C-9B8CD4636BF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DEF7EECE-2313-42A3-FF5C-9B8CD4636BF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -23,7 +29,7 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-																							GlobalSection(MonoDevelopProperties) = preSolution
+																											GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1

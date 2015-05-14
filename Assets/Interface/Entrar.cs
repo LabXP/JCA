@@ -14,6 +14,24 @@ public class Entrar : MonoBehaviour {
 	public bool Logou;
 
 
+	//hyram
+	public HSController controller;
+	fbcon2controller controllerBugLogin;
+	public static string resultSeverBug;
+	public static bool callServerEnded;
+
+	void Update(){
+		if (resultSeverBug != "" && callServerEnded == true){
+			controllerBugLogin.takeToUserController(resultSeverBug);
+			Application.LoadLevel("Lobby1");
+		} 
+
+		if (Logou){
+			Application.LoadLevel("MainScreen");
+		}
+	}
+
+
 	void OnMouseEnter(){
 		GetComponent<AudioSource>().PlayOneShot(HoverSound);
 	}
@@ -22,6 +40,8 @@ public class Entrar : MonoBehaviour {
 		LoginInfo[1] = text[1].GetComponent<InputField>().text;
 		if (LoginInfo[0] == "" || LoginInfo[1] == ""){
 			StartCoroutine(Error());
+		}else{//hyram
+			controller.Login(LoginInfo[0] = text[0].GetComponent<InputField>().text, LoginInfo[1] = text[1].GetComponent<InputField>().text);
 		}
 	}
 	IEnumerator Error(){
@@ -35,11 +55,6 @@ public class Entrar : MonoBehaviour {
 	}
 	void OnMouseExit(){
 		gameObject.GetComponent<SpriteRenderer>().sprite = NotHover;
-	}
-	void Update(){
-		if (Logou){
-			Application.LoadLevel("MainScreen");
-		}
 	}
 
 }

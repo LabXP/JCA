@@ -72,7 +72,7 @@ public class Helper : MonoBehaviour
 			// Debug.Log(IsPositionValid(row, column) + "\t" + IsConnectedToTop(row, column));
 			FindNewValidPosition (row, column, bubblePosition, bubble);
 		}
-
+		CheckForBugs ();
 		bubble.bubbleObject.tag = "Bubble";
 
 		//Debug.Log(game.matrix.bubbleMatrix[row, column].getColor());
@@ -290,7 +290,7 @@ public class Helper : MonoBehaviour
             Debug.Log(isConnected);
         }*/
 
-		CheckForBugs ();
+		
 		Debug.Log ("sup2");
 		return isConnected;
 	}
@@ -596,10 +596,10 @@ public class Helper : MonoBehaviour
 			//Debug.Log (row + "\t" + column + "\t" + game.matrix.bubbleMatrix [row, column]);
 
 			if (bubbleObjectController.isMoving == false && game.matrix.bubbleMatrix [row, column] == null) {
-				Debug.Log (row + "\t" + column + "\t" + game.matrix.bubbleMatrix [row, column]);
+				//Debug.Log (row + "\t" + column + "\t" + game.matrix.bubbleMatrix [row, column]);
 				//Debug.Log (bubblesGameObjects [i].name);
 
-				//Destroy (bubblesGameObjects [i], 0.4f);
+				Destroy (bubblesGameObjects [i], 0.4f);
 			}
 		}
 	}
