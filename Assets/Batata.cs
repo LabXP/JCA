@@ -17,5 +17,9 @@ public class Batata : MonoBehaviour
 		if (gameObject.activeSelf) {
 			GameController.playing = false;
 		}
+
+		/* if(player acertou a sequencia certa){
+			ganhou uma vida ! ! !
+		}*/
 	}
 }
