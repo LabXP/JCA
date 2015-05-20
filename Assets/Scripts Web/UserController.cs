@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class UserController : MonoBehaviour {
+public class UserController : MonoBehaviour
+{
 
 	public static UserController instance = null;
 
@@ -13,16 +14,17 @@ public class UserController : MonoBehaviour {
 	public int points;
 	public string stars;
 	public string playersConf;
-	public int life;
+	public int life = 3;
 	public int bestpoints;
 
-	void Awake(){
-		if (instance == null){
+	void Awake ()
+	{
+		if (instance == null) {
 			instance = this;
-		} else if (instance != this){
-			Destroy(gameObject);
+		} else if (instance != this) {
+			Destroy (gameObject);
 		}
-		DontDestroyOnLoad(gameObject);
+		DontDestroyOnLoad (gameObject);
 	}
 
 

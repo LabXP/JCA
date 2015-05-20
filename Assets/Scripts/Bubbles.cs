@@ -12,7 +12,9 @@ public class Bubbles
 		Red,
 		Yellow,
 		Green,
-		Purple
+		Purple,
+		Explode,
+		Adapt
     }
 	;
 	public GameObject bubbleObject;
