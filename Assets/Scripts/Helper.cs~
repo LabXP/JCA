@@ -696,7 +696,7 @@ public class Helper : MonoBehaviour
 
 			//Debug.Log (row + "\t" + column + "\t" + game.matrix.bubbleMatrix [row, column]);
 
-			if (bubbleObjectController.isMoving == false && game.matrix.bubbleMatrix [row, column] == null) {
+			if (game.matrix.bubbleMatrix [row, column] == null && bubbleObjectController.isMoving == false) {
 				//Debug.Log (row + "\t" + column + "\t" + game.matrix.bubbleMatrix [row, column]);
 				//Debug.Log (bubblesGameObjects [i].name);
 				Debug.Log (row + "\t" + column + "\t" + game.matrix.bubbleMatrix [row, column]);
