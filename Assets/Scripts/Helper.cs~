@@ -74,7 +74,7 @@ public class Helper : MonoBehaviour
 		}
 
 		bubble.bubbleObject.tag = "Bubble";
-		bubble.bubbleObject.layer = "Ball";
+		bubble.bubbleObject.layer = 12;
 
 		//Debug.Log(game.matrix.bubbleMatrix[row, column].getColor());
 		DestroyTrios (row, column);

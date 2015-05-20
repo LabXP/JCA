@@ -30,7 +30,7 @@ public class Matrix
 				bubbleMatrix [i, j] = new Bubbles (newPosition.x, newPosition.y);
 				bubbleMatrix [i, j].bubbleObjectController.isMoving = false;
 				bubbleMatrix [i, j].bubbleObject.tag = "Bubble";
-				bubbleMatrix [i, j].bubbleObject.layer = "Ball";
+				bubbleMatrix [i, j].bubbleObject.layer = 12;
 				newPosition.x += distance;
 			}
 			newPosition.y -= distance;
