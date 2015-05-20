@@ -80,6 +80,7 @@ public class GameController : MonoBehaviour
 		}
 
 		if (lose) {
+			//UserController.instance.life--;
 			playing = false;
 			loseScreen.SetActive (true);
 		}
