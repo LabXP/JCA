@@ -72,7 +72,14 @@ public class Helper : MonoBehaviour
 			// Debug.Log(IsPositionValid(row, column) + "\t" + IsConnectedToTop(row, column));
 			FindNewValidPosition (row, column, bubblePosition, bubble);
 		}
+<<<<<<< HEAD
 		CheckForBugs ();
+=======
+		
+		CheckForBugs ();
+		Debug.Log ("sup2");
+
+>>>>>>> origin/master
 		bubble.bubbleObject.tag = "Bubble";
 
 		//Debug.Log(game.matrix.bubbleMatrix[row, column].getColor());
@@ -290,8 +297,11 @@ public class Helper : MonoBehaviour
             Debug.Log(isConnected);
         }*/
 
+<<<<<<< HEAD
 		
 		Debug.Log ("sup2");
+=======
+>>>>>>> origin/master
 		return isConnected;
 	}
 
@@ -596,8 +606,13 @@ public class Helper : MonoBehaviour
 			//Debug.Log (row + "\t" + column + "\t" + game.matrix.bubbleMatrix [row, column]);
 
 			if (bubbleObjectController.isMoving == false && game.matrix.bubbleMatrix [row, column] == null) {
+<<<<<<< HEAD
 				//Debug.Log (row + "\t" + column + "\t" + game.matrix.bubbleMatrix [row, column]);
 				//Debug.Log (bubblesGameObjects [i].name);
+=======
+				Debug.Log (row + "\t" + column + "\t" + game.matrix.bubbleMatrix [row, column]);
+				Debug.Log (bubblesGameObjects [i].name);
+>>>>>>> origin/master
 
 				Destroy (bubblesGameObjects [i], 0.4f);
 			}
