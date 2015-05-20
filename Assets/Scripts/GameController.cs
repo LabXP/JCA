@@ -10,6 +10,7 @@ public class GameController : MonoBehaviour
 	public int totalPoints = 0;
 	public int bubblesLeft = 0;
 	public GameObject victoryScreen, loseScreen;
+	public int powerUpExplodeCounter = 0;
 
 	private Shoot shoot;
 	private Helper helper;
@@ -37,6 +38,7 @@ public class GameController : MonoBehaviour
 				bubblesLeft--;
 			} else {
 				Points (helper.shotBubbles, helper.extraBubbles);
+				powerUpExplodeCounter++;
 				CheckIfWin ();
 			}
 
@@ -80,7 +82,8 @@ public class GameController : MonoBehaviour
 		}
 
 		if (lose) {
-			//UserController.instance.life--;
+			UserController.instance.life--;
+
 			playing = false;
 			loseScreen.SetActive (true);
 		}
@@ -113,7 +116,7 @@ public class GameController : MonoBehaviour
 		//Somente pontua se fez trio
 		if (shotBubbles >= 3) {
 			int turnPoints = 0; //Pontos do turno
-			bool combo = false; //Se fez combo
+			bool combo = false; //Combo
 
 			//Se acertou mais de 6, combo
 			if (shotBubbles >= 6) {

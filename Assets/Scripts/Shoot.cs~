@@ -90,6 +90,7 @@ public class Shoot : MonoBehaviour
 		}
 	}
 
+	//Toca um som diferente para cada bolha
 	void PlaySound (Bubbles bubble)
 	{
 		string color = bubble.getColor ();
