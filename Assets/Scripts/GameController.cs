@@ -36,6 +36,7 @@ public class GameController : MonoBehaviour
 				Invoke ("CheckIfNewRow", 0.2f);
 				pointsModifier = 1;
 				bubblesLeft--;
+				powerUpExplodeCounter = 0;
 			} else {
 				Points (helper.shotBubbles, helper.extraBubbles);
 				powerUpExplodeCounter++;

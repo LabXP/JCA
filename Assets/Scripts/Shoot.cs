@@ -10,7 +10,9 @@ public class Shoot : MonoBehaviour
 	public bool canShoot = true;
 	public AudioSource bubbleAudioSource;
 	public AudioClip[] bubbleAudioClips;
+	public GameObject girl;
 
+	private Animator girlAnim;
 	private Bubbles bubbleInstance, thrownBubble;	//bubbles usados no lançamento (proxima bolha, bolha sendo jogada)
 	private Vector3 diff; //controle do mouse
 	private float rotZ = 90f; //controle de rotaçao
@@ -24,6 +26,7 @@ public class Shoot : MonoBehaviour
 		bubbleInstance = new Bubbles (initialBubblePosition.position.x, initialBubblePosition.position.y);
 		cannonAnimator = cannon.GetComponent<Animator> ();
 		helper = GameObject.FindObjectOfType<Helper> ();
+		girlAnim = girl.GetComponent<Animator> ();
 	}
 
 	void FixedUpdate ()
@@ -69,6 +72,8 @@ public class Shoot : MonoBehaviour
 				cannonAnimator.SetTrigger ("Shoot");
 
 				PlaySound (thrownBubble);
+
+				girlAnim.SetTrigger ("Play");
 
 				shot = true;
 			}
