@@ -25,8 +25,13 @@ public class Level2 : MonoBehaviour
 				//gameObject.SetActive(false);
 					foreach (MeshRenderer levelMat in LevelMaterial){
 						levelMat.material.color = levelColor;
+					} 
+			} else if ((FindObjectOfType<StarController> ().starCount [int.Parse (level) - 1]) > 0){
+				//gameObject.SetActive(false);
+					foreach (MeshRenderer levelMat in LevelMaterial){
+						levelMat.material.color = Color.white;
 					}
-			}
+				}
 				
 		}
 		void OnMouseDown ()

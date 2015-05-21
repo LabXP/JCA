@@ -5,8 +5,15 @@ public class UpdateUserController : MonoBehaviour {
 	
 
 	public UserController controller;
+	public static UpdateUserController instance;
 
 	void Awake (){
+		if (instance == null){
+			instance = this;
+		} else {
+			Destroy(this);
+		}
+		DontDestroyOnLoad(gameObject);
 		controller = FindObjectOfType<UserController>();
 	}
 

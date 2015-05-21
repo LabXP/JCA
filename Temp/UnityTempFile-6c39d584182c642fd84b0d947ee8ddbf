@@ -104,6 +104,7 @@
 'Assets/Scripts/ErrorDisplay.cs'
 'Assets/Scripts/GameController.cs'
 'Assets/Scripts/GoToMenu.cs'
+'Assets/Scripts/GuideLine.cs'
 'Assets/Scripts/Helper.cs'
 'Assets/Scripts/HighScore.cs'
 'Assets/Scripts/Level.cs'
