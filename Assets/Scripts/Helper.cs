@@ -485,7 +485,7 @@ public class Helper : MonoBehaviour
 				}
 			}
 
-		} else if (game.matrix.bubbleMatrix [row, column].getColor () == "Explode") {
+		} else {
 			
 			List<int> rows = new List<int> ();
 			List<int> columns = new List<int> ();
@@ -563,17 +563,20 @@ public class Helper : MonoBehaviour
 				}
 			} catch (System.IndexOutOfRangeException) {
 			}
+
+			if (game.matrix.bubbleMatrix [row, column].getColor () == "Explode") {
+
+				hitBubbles = true;
+				explosionAudioClip.Play ();
 			
-			hitBubbles = true;
-			explosionAudioClip.Play ();
-			
-			for (int i = 0; i < bubblesToDestroy.Count; i++) {
-				//Debug.Log (bubblesToDestroy [i].getColor ());
-				game.matrix.bubbleMatrix [rows [i], columns [i]].bubbleObject.tag = "Untagged";
-				GameObject child = game.matrix.bubbleMatrix [rows [i], columns [i]].bubbleObject.transform.FindChild ("explosion").gameObject;
-				child.SetActive (true);
-				Destroy (game.matrix.bubbleMatrix [rows [i], columns [i]].bubbleObject, 0.4f);
-				game.matrix.bubbleMatrix [rows [i], columns [i]] = null;
+				for (int i = 0; i < bubblesToDestroy.Count; i++) {
+					//Debug.Log (bubblesToDestroy [i].getColor ());
+					game.matrix.bubbleMatrix [rows [i], columns [i]].bubbleObject.tag = "Untagged";
+					GameObject child = game.matrix.bubbleMatrix [rows [i], columns [i]].bubbleObject.transform.FindChild ("explosion").gameObject;
+					child.SetActive (true);
+					Destroy (game.matrix.bubbleMatrix [rows [i], columns [i]].bubbleObject, 0.4f);
+					game.matrix.bubbleMatrix [rows [i], columns [i]] = null;
+				}
 			}
 		}
 
