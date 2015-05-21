@@ -84,6 +84,7 @@ public class GameController : MonoBehaviour
 
 		if (lose) {
 			UserController.instance.life--;
+			UpdateUserController.instance.UpdateDatabase ();
 
 			playing = false;
 			loseScreen.SetActive (true);
@@ -105,6 +106,7 @@ public class GameController : MonoBehaviour
 		}
 	
 		if (win) {
+			UpdateUserController.instance.UpdateDatabase ();
 			Debug.Log ("win");
 			playing = false;
 			victoryScreen.SetActive (true);
