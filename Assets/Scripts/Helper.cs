@@ -81,7 +81,7 @@ public class Helper : MonoBehaviour
 		DestroyHangingBubbles ();
 		
 		CheckForBugs ();
-		Debug.Log ("sup2");
+		//Debug.Log ("sup2");
 
 		gameController.AfterATurn ();
 	}
@@ -293,8 +293,7 @@ public class Helper : MonoBehaviour
             Debug.Log(isConnected);
         }*/
 
-		
-		Debug.Log ("sup2");
+
 		return isConnected;
 	}
 
@@ -577,9 +576,138 @@ public class Helper : MonoBehaviour
 					Destroy (game.matrix.bubbleMatrix [rows [i], columns [i]].bubbleObject, 0.4f);
 					game.matrix.bubbleMatrix [rows [i], columns [i]] = null;
 				}
+			} else {
+				PowerUpAdapt (rows, columns, bubblesToDestroy);
 			}
 		}
 
+	}
+
+	void PowerUpAdapt (List<int> rowsFound, List<int> columnsFound, List<Bubbles> bubblesFound)
+	{
+
+		List<int> combinationsFound = new List<int> ();
+		int aux = 0;
+		string name = bubblesFound [0].bubbleObject.name;
+
+		for (int j = 0; j < bubblesFound.Count; j++) {
+			int row = rowsFound [j], column = columnsFound [j];
+
+			List<int> rows = new List<int> ();
+			List<int> columns = new List<int> ();
+			List<Bubbles> bubblesToDestroy = new List<Bubbles> ();
+			rows.Add (row);
+			columns.Add (column);
+			bubblesToDestroy.Add (game.matrix.bubbleMatrix [row, column]);
+
+			for (int i = 0; i < bubblesToDestroy.Count; i++) {
+			
+				row = rows [i];
+				column = columns [i];
+			
+				//Lados
+				try {
+					if (game.matrix.bubbleMatrix [row, column + 1] != null && game.matrix.bubbleMatrix [row, column].getColor () == game.matrix.bubbleMatrix [row, column + 1].getColor () &&
+						!bubblesToDestroy.Contains (game.matrix.bubbleMatrix [row, column + 1])) {
+						bubblesToDestroy.Add (game.matrix.bubbleMatrix [row, column + 1]);
+						rows.Add (row);
+						columns.Add (column + 1);
+					}
+				} catch (System.IndexOutOfRangeException) {
+				}
+				try {
+					if (game.matrix.bubbleMatrix [row, column - 1] != null && game.matrix.bubbleMatrix [row, column].getColor () == game.matrix.bubbleMatrix [row, column - 1].getColor () &&
+						!bubblesToDestroy.Contains (game.matrix.bubbleMatrix [row, column - 1])) {
+						bubblesToDestroy.Add (game.matrix.bubbleMatrix [row, column - 1]);
+						rows.Add (row);
+						columns.Add (column - 1);
+					}
+				} catch (System.IndexOutOfRangeException) {
+				}
+			
+				//Embaixo
+				try {
+					if (game.matrix.bubbleMatrix [row + 1, column] != null && game.matrix.bubbleMatrix [row, column].getColor () == game.matrix.bubbleMatrix [row + 1, column].getColor () &&
+						!bubblesToDestroy.Contains (game.matrix.bubbleMatrix [row + 1, column])) {
+						bubblesToDestroy.Add (game.matrix.bubbleMatrix [row + 1, column]);
+						rows.Add (row + 1);
+						columns.Add (column);
+					}
+				} catch (System.IndexOutOfRangeException) {
+				}
+				try {
+					if (IsRowFull (row)) {
+						if (game.matrix.bubbleMatrix [row + 1, column - 1] != null && game.matrix.bubbleMatrix [row, column].getColor () == game.matrix.bubbleMatrix [row + 1, column - 1].getColor () &&
+							!bubblesToDestroy.Contains (game.matrix.bubbleMatrix [row + 1, column - 1])) {
+							bubblesToDestroy.Add (game.matrix.bubbleMatrix [row + 1, column - 1]);
+							rows.Add (row + 1);
+							columns.Add (column - 1);
+						}
+					} else {
+						if (game.matrix.bubbleMatrix [row + 1, column + 1] != null && game.matrix.bubbleMatrix [row, column].getColor () == game.matrix.bubbleMatrix [row + 1, column + 1].getColor () &&
+							!bubblesToDestroy.Contains (game.matrix.bubbleMatrix [row + 1, column + 1])) {
+							bubblesToDestroy.Add (game.matrix.bubbleMatrix [row + 1, column + 1]);
+							rows.Add (row + 1);
+							columns.Add (column + 1);
+						}
+					}
+				} catch (System.IndexOutOfRangeException) {
+				}
+			
+				//Em cima
+				try {
+					if (game.matrix.bubbleMatrix [row - 1, column] != null && game.matrix.bubbleMatrix [row, column].getColor () == game.matrix.bubbleMatrix [row - 1, column].getColor () &&
+						!bubblesToDestroy.Contains (game.matrix.bubbleMatrix [row - 1, column])) {
+						bubblesToDestroy.Add (game.matrix.bubbleMatrix [row - 1, column]);
+						rows.Add (row - 1);
+						columns.Add (column);
+					}
+				} catch (System.IndexOutOfRangeException) {
+				}
+				try {
+					if (IsRowFull (row)) {
+						if (game.matrix.bubbleMatrix [row - 1, column - 1] != null && game.matrix.bubbleMatrix [row, column].getColor () == game.matrix.bubbleMatrix [row - 1, column - 1].getColor () &&
+							!bubblesToDestroy.Contains (game.matrix.bubbleMatrix [row - 1, column - 1])) {
+							bubblesToDestroy.Add (game.matrix.bubbleMatrix [row - 1, column - 1]);
+							rows.Add (row - 1);
+							columns.Add (column - 1);
+						}
+					} else {
+						if (game.matrix.bubbleMatrix [row - 1, column + 1] != null && game.matrix.bubbleMatrix [row, column].getColor () == game.matrix.bubbleMatrix [row - 1, column + 1].getColor () &&
+							!bubblesToDestroy.Contains (game.matrix.bubbleMatrix [row - 1, column + 1])) {
+							bubblesToDestroy.Add (game.matrix.bubbleMatrix [row - 1, column + 1]);
+							rows.Add (row - 1);
+							columns.Add (column + 1);
+						}
+					}
+				} catch (System.IndexOutOfRangeException) {
+				}
+			
+			}
+
+			try {
+				combinationsFound.Add (bubblesToDestroy.Count);
+				//Debug.Log (bubblesToDestroy.Count + "\t" + bubblesToDestroy [0].bubbleObject.name);
+				if (bubblesToDestroy.Count > aux) {
+					aux = bubblesToDestroy.Count;
+					name = bubblesToDestroy [0].bubbleObject.name;
+				}
+
+			} catch (System.ArgumentOutOfRangeException) {
+			}
+		}
+
+		if (aux > 1) {
+			Debug.Log (aux + "\t" + name);
+			game.matrix.bubbleMatrix [rowsFound [0], columnsFound [0]].setColor (0, name);
+			DestroyTrios (rowsFound [0], columnsFound [0]);
+		} else {
+			game.matrix.bubbleMatrix [rowsFound [0], columnsFound [0]].bubbleObject.tag = "Untagged";
+			GameObject child = game.matrix.bubbleMatrix [rowsFound [0], columnsFound [0]].bubbleObject.transform.FindChild ("explosion").gameObject;
+			child.SetActive (true);
+			Destroy (game.matrix.bubbleMatrix [rowsFound [0], columnsFound [0]].bubbleObject, 0.4f);
+			game.matrix.bubbleMatrix [rowsFound [0], columnsFound [0]] = null;
+		}
 	}
 
 	//Destroi as bolhas penduradas
@@ -675,9 +803,13 @@ public class Helper : MonoBehaviour
 		if (gameController.powerUpExplodeCounter == 15) {
 			gameController.powerUpExplodeCounter = 0;
 			return "Explode";
+		} else if (gameController.bubblesLeft <= 2 && gameController.adaptPowerUpTimes <= 5) {
+			return "Adapt";
 		} else {
 			return colors [random];
 		}
+
+
 	}
 
 	public void CheckForBugs ()
@@ -689,7 +821,7 @@ public class Helper : MonoBehaviour
 
 		int row, column;
 
-		Debug.Log ("sup");
+		//Debug.Log ("sup");
 
 		for (int i = 0; i < bubblesGameObjects.Length; i ++) {
 			row = PositionToRow (bubblesGameObjects [i].transform.position);

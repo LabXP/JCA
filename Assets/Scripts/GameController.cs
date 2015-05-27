@@ -11,6 +11,7 @@ public class GameController : MonoBehaviour
 	public int bubblesLeft = 0;
 	public GameObject victoryScreen, loseScreen;
 	public int powerUpExplodeCounter = 0;
+	public int adaptPowerUpTimes = 0;
 
 	private Shoot shoot;
 	private Helper helper;
@@ -41,6 +42,10 @@ public class GameController : MonoBehaviour
 				Points (helper.shotBubbles, helper.extraBubbles);
 				powerUpExplodeCounter++;
 				CheckIfWin ();
+			}
+
+			if (bubblesLeft == 2) {
+				adaptPowerUpTimes ++;
 			}
 
 			helper.shotBubbles = 0;
