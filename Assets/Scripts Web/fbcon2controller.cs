@@ -122,7 +122,6 @@ public class fbcon2controller : MonoBehaviour {
 				userController.bestpoints = int.Parse(resultado[6]);
 			}
 
-			Entrar.callServerEnded = true;
 		}else {
 
 			StartCoroutine ("PSError");

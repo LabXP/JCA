@@ -16,6 +16,7 @@ public class Level2 : MonoBehaviour
 		private Animator anim;
 		public MeshRenderer[] LevelMaterial;
 
+
 		void Awake ()
 		{		
 				LevelMaterial = GetComponentsInChildren<MeshRenderer>() as MeshRenderer[];

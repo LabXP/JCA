@@ -4,8 +4,10 @@ using System.Collections;
 public class FaceBookLogin : MonoBehaviour {
 	public Sprite hover;
 	public Sprite NotHover;
+	public AudioClip HoverSound;
 
-	void OnMouseOver(){
+	void OnMouseEnter(){
+		GetComponent<AudioSource>().PlayOneShot(HoverSound);
 		gameObject.GetComponent<SpriteRenderer>().sprite = hover;
 	}
 	void OnMouseExit(){

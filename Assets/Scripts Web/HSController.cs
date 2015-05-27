@@ -39,11 +39,8 @@ public class HSController : MonoBehaviour{
 		yield return www;
      // check for errors
     	if (www.error == null && www.text != null){
-			if(call == 'f')
- 		   		fbcon2controller.resultSeverBug = www.text;
-			else if(call == 'n')
-				Entrar.resultSeverBug = www.text;
-    		}
+            fbcon2controller.resultSeverBug = www.text;
+        }
     }
 
     

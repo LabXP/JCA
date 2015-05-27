@@ -11,6 +11,6 @@ public class PlayIntro : MonoBehaviour {
     }
 
     void GoToLogin(){
-    	Application.LoadLevel("MainScreen0");
+    	Application.LoadLevel("Login");
     }
 }

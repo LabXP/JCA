@@ -16,6 +16,7 @@ public class UserController : MonoBehaviour
 	public string playersConf;
 	public int life = 3;
 	public int bestpoints;
+	public bool Facebook;
 
 	void Awake ()
 	{
