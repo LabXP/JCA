@@ -9,6 +9,7 @@ public class Opcoes : MonoBehaviour {
 	public GameObject Options;
 	public GameObject[] Buttons;
 	public GameObject Voltar;
+	public GameObject Instrucao;
 	public AudioClip HoverSound;
 	
 	void OnMouseOver(){
@@ -22,12 +23,15 @@ public class Opcoes : MonoBehaviour {
 	}
 	void OnMouseDown(){
 		if (!Options.activeSelf){
+		Instrucao.SetActive(false);
 		Buttons[0].SetActive(false);
 		Buttons[1].SetActive(false);
 		Buttons[2].SetActive(false);
 		Voltar.GetComponent<SpriteRenderer>().sprite = Voltar.GetComponent<Opcoes>().NotHover;
 		Options.SetActive(true);
 		} else if (Options.activeSelf){
+
+		Instrucao.SetActive(true);
 		Buttons[0].SetActive(true);
 		Buttons[0].GetComponent<SpriteRenderer>().sprite = Buttons[0].GetComponent<MainMenu>().NotHover;
 		Buttons[1].SetActive(true);
