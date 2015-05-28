@@ -13,7 +13,7 @@ public class HSController : MonoBehaviour{
     	login = log;
     	pass = pas;
 
-    	string url = "localhost/jca/logsenha.php?logando="+login+"&pass="+pass;
+    	string url = "http://mosaicotextil.richness-land.com/jogojca/logsenha.php?logando="+login+"&pass="+pass;
     	WWW www = new WWW(url);
     	StartCoroutine(WaitForRequest(www, 'n'));
 
@@ -25,7 +25,7 @@ public class HSController : MonoBehaviour{
 		login = idfb;
 		nome = nom;
 
-		string url = "localhost/jca/logface.php?logando="+login+"&nome="+nome;
+		string url = "http://mosaicotextil.richness-land.com/jogojca/logface.php?logando="+login+"&nome="+nome;
 		WWW www = new WWW(url);
 
 		StartCoroutine(WaitForRequest(www, 'f'));
