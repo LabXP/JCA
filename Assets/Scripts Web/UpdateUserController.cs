@@ -29,13 +29,13 @@ public class UpdateUserController : MonoBehaviour {
 			controller.life = 3;
 		}
 
-		print("localhost/jca/update.php?login="+controller.login+"&senhaservidor=batata&nome="+controller.name+
+		print("http://mosaicotextil.richness-land.com/jogojca/update.php?login="+controller.login+"&senhaservidor=batata&nome="+controller.name+
 		      "&niveldojogador="+controller.levelPlayer+"&pontuacao="+controller.points+"&estrelas="+controller.stars+
 		      "&confdojogador="+controller.playersConf+"&vida="+controller.life+"&melhorpontuacao="+controller.bestpoints);
 
 
 
-		string url = "localhost/jca/update.php?login="+controller.login+"&senhaservidor=batata&nome="+controller.name+
+		string url = "http://mosaicotextil.richness-land.com/jogojca/update.php?login="+controller.login+"&senhaservidor=batata&nome="+controller.name+
 						"&niveldojogador="+controller.levelPlayer+"&pontuacao="+controller.points+"&estrelas="+controller.stars+
 							"&confdojogador="+controller.playersConf+"&vida="+controller.life+"&melhorpontuacao="+controller.bestpoints;
 		//upando
