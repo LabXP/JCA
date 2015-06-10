@@ -121,6 +121,14 @@ public class Shoot : MonoBehaviour
 			bubbleAudioSource.clip = bubbleAudioClips [4];
 			bubbleAudioSource.Play ();
 			break;
+		case "Adapt":
+			bubbleAudioSource.clip = bubbleAudioClips [5];
+			bubbleAudioSource.Play ();
+			break;
+		case "Explode":
+			bubbleAudioSource.clip = bubbleAudioClips [6];
+			bubbleAudioSource.Play ();
+			break;
 		}
 	}
 }
