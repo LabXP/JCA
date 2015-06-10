@@ -8,7 +8,7 @@ public class GuideLine : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 	}
-	RaycastHit2D guide;
+	public RaycastHit2D guide;
 	// Update is called once per frame
 	void Update () {
 		Vector3 direc = dir.position - start.position;
@@ -41,5 +41,9 @@ public class GuideLine : MonoBehaviour {
      	 GetComponent<LineRenderer>().SetPosition(0, start.position);
 
      	 GetComponent<LineRenderer>().SetPosition(1, guide.point);
+
+     	float distanceA = Vector3.Distance(start.position, guide.point);
+		GetComponent<LineRenderer>().GetComponent<Renderer>().material.mainTextureScale = new Vector2(distanceA/4, 1);
 	}
+
 }

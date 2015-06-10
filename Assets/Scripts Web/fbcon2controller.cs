@@ -22,7 +22,7 @@ public class fbcon2controller : MonoBehaviour {
 	void Update(){
 		if (resultSeverBug != "" && callServerEnded == true){
 			takeToUserController(resultSeverBug);
-			Application.LoadLevel("Lobby1");
+			Application.LoadLevel("MainScreen0");
 
 		} 
 

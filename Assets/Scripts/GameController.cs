@@ -19,6 +19,9 @@ public class GameController : MonoBehaviour
 	private int basePoints = 100;
 	private int pointsModifier = 1;
 
+	//minatto
+	public GameObject GuideLine;
+
 	void Start ()
 	{
 		shoot = GetComponent<Shoot> ();
@@ -26,8 +29,14 @@ public class GameController : MonoBehaviour
 		game = GetComponent<NewGame> ();
 		bubblesLeft = game.totalUsableBubbles;
 		playing = true;
+
+		GuideLine = FindObjectOfType<LineRenderer>().gameObject;
 	}
 
+	void Update(){
+		if (Input.GetKey(KeyCode.J))
+			win = true;
+	}
 	//Controla a jogada depois de lançar a bola
 	public void AfterATurn ()
 	{
@@ -88,10 +97,12 @@ public class GameController : MonoBehaviour
 		}
 
 		if (lose) {
-			UserController.instance.life--;
-			UpdateUserController.instance.UpdateDatabase ();
-
+			if (UserController.instance.Facebook){
+					UserController.instance.life--;
+					UpdateUserController.instance.UpdateDatabase ();
+				}
 			playing = false;
+			GuideLine.SetActive(false);
 			loseScreen.SetActive (true);
 		}
 	}
@@ -111,9 +122,11 @@ public class GameController : MonoBehaviour
 		}
 	
 		if (win) {
-			UpdateUserController.instance.UpdateDatabase ();
+			if (UserController.instance.Facebook)
+				UpdateUserController.instance.UpdateDatabase ();
 			Debug.Log ("win");
 			playing = false;
+			GuideLine.SetActive(false);
 			victoryScreen.SetActive (true);
 		}
 	}
