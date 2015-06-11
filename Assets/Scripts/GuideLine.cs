@@ -9,6 +9,8 @@ public class GuideLine : MonoBehaviour {
 	void Start () {
 	}
 	public RaycastHit2D guide;
+
+	public Vector3 pontoA, pontoB;
 	// Update is called once per frame
 	void Update () {
 		Vector3 direc = dir.position - start.position;
@@ -20,7 +22,7 @@ public class GuideLine : MonoBehaviour {
          Vector3 reflectVec = Vector3.Reflect(incomingVec, guide.normal);
          RaycastHit2D guide2 = Physics2D.CircleCast(guide.point, 0.35f, reflectVec, dist, lmLeft);
 		 Debug.DrawLine(start.position, guide.point, Color.red);
-		 Debug.DrawLine(guide.point, guide2.point, Color.green);
+		 Debug.DrawLine(guide.point, guide2.point, Color.black);
          Debug.DrawRay(guide.point, reflectVec, Color.cyan);
          GetComponent<LineRenderer>().SetPosition(2, guide2.point);
      	} else if (guide.transform != null && guide.transform.tag == "RightWall"){
