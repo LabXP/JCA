@@ -11,6 +11,7 @@ public class Matrix
 	//construtor
 	public Matrix (int rows, int columns, Vector2 initialPosition, int distance)
 	{
+		isFirstRowFull = true;
 		bool fullRow = true;	//se a linha tem o maximo de colunas
 		Vector2 newPosition = initialPosition;	//nova posição de acordo com a bolha anterior
 		int newColumns = columns;	//quantidade de colunas

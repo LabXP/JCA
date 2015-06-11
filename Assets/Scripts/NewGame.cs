@@ -55,7 +55,7 @@ public class NewGame : MonoBehaviour
 			bgMusicSource.Play ();
 			background.sprite = backgorundSprite [1];
 		} else {
-			bgMusicSource.clip = bgMusicClips [2];
+			bgMusicSource.clip = bgMusicClips [1];
 			bgMusicSource.Play ();
 			background.sprite = backgorundSprite [2];
 		}
