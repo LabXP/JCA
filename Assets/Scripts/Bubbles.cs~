@@ -49,6 +49,7 @@ public class Bubbles
 		bubbleObject.transform.position = position;
 
 		bubbleObject.name = getColor ();
+		bubbleObject.tag = "Bubble";
 
 		bubbleObjectController = bubbleObject.GetComponent<BubblesController> ();
 	}
