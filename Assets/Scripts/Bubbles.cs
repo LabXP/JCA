@@ -17,7 +17,7 @@ public class Bubbles
 		Adapt
     }
 	;
-	public GameObject bubbleObject;
+	public GameObject bubbleObject; //O gameobject que é instanciado
 	public BubblesController bubbleObjectController;
 	private BubbleColor bubbleColor;	//cor da bolha
 
@@ -32,6 +32,10 @@ public class Bubbles
 			return bubbleColor = (BubbleColor)Enum.Parse (typeof(BubbleColor), color);
 		}
 	}
+
+	//sim eu sei fazer get e set direito agora
+	//antes eu nao sabia
+	// :V
 	//retorna a cor da bolha
 	public string getColor ()
 	{

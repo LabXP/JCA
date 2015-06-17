@@ -6,20 +6,23 @@ public class NewGame : MonoBehaviour
 {
 
 	public Sprite[] backgorundSprite; //array com tres fundos
-	public AudioClip[] bgMusicClips; //array com "tres" musicas
+	public AudioClip[] bgMusicClips; //array com "tres" (DUAS) musicas
 	public SpriteRenderer background; //renderer do cenario
-	public Matrix matrix;	//matriz inicial
+	public Matrix matrix;	//matriz de bolhas inicial
 	public int totalUsableBubbles, bubblesLimitToNewRow; //bolhas totais, limite para descer a linha
 
 	private AudioSource bgMusicSource; //audio source da musica de fundo
 	private int rows = 1, columns = 20, distance = 1, variety = 1;	//linhas, colunas, distancia entre uma bolha e outra, variedade de bolhas
 	private Vector2 position = new Vector2 (-9.5f, 4.5f);	//Posição inicial (esquerda/topo)
-	private static int staticVariety; //hue
+	private static int staticVariety; //hue ana se fudeu 
 
 	void Awake ()
 	{
+		//Coisa que eu testei e aparentemente nao funciona
 		Application.targetFrameRate = 60;
+
 		bgMusicSource = GetComponent<AudioSource> ();
+
 		//Inicia a matriz de acordo com o level
 		if (Application.loadedLevelName == "Level1" || Application.loadedLevelName == "Level2" || Application.loadedLevelName == "Level3" || Application.loadedLevelName == "Level4" || Application.loadedLevelName == "Level5") {
 			variety = 3;
@@ -65,6 +68,8 @@ public class NewGame : MonoBehaviour
 
 	}
 
+	//nao lembro porque eu fiz static
+	//tinha um motivo
 	//seta variedade de bolhas
 	public void setVariety ()
 	{

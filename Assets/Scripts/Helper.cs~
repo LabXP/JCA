@@ -7,9 +7,9 @@ public class Helper : MonoBehaviour
 	private NewGame game;
 	private GameController gameController;
 
-	public bool hitBubbles = false;
-	public int shotBubbles = 0, extraBubbles = 0;
-	public AudioSource explosionAudioClip, fallingAudioClip;
+	public bool hitBubbles = false;	//Se acertou trio
+	public int shotBubbles = 0, extraBubbles = 0;	//quantas bolhas foram acertadas no trio (ou mais), quantas bolhas cairam
+	public AudioSource explosionAudioClip, fallingAudioClip; //Som de bolha explodindo, som de bolha caindo
 
 	void Start ()
 	{
@@ -17,11 +17,12 @@ public class Helper : MonoBehaviour
 		gameController = GetComponent<GameController> ();
 	}
 
-	//Cheio de debugs
+	//Cheio de //Debugs
 	void Update ()
 	{
+		////Debugs
 		if (Input.GetKeyDown (KeyCode.A)) {
-			Debug.Log (IsConnectedToTop (3, 6));
+			//Debug.Log (IsConnectedToTop (3, 6));
 		}
 		if (Input.GetKeyDown (KeyCode.S)) {
 			game.matrix.bubbleMatrix [2, 6] = null;
@@ -38,9 +39,9 @@ public class Helper : MonoBehaviour
 			for (int i = 0; i < game.matrix.bubbleMatrix.GetLength(0); i++) {
 				for (int j = 0; j < game.matrix.bubbleMatrix.GetLength(1); j++) {
 					try {
-						Debug.Log (game.matrix.bubbleMatrix [i, j].getColor ());
+						//Debug.Log (game.matrix.bubbleMatrix [i, j].getColor ());
 					} catch (System.NullReferenceException) {
-						Debug.Log ("Null");
+						//Debug.Log ("Null");
 					}
 				}
 			}
@@ -56,7 +57,7 @@ public class Helper : MonoBehaviour
 		Vector2 bubblePosition = bubble.bubbleObject.transform.position;
 		int row = PositionToRow (bubblePosition);
 		int column = PositionToColumn (bubblePosition, row);
-		//Debug.Log(row + "\t" + column);
+		////Debug.Log(row + "\t" + column);
 
 
 		//Se a posição for válida
@@ -69,19 +70,19 @@ public class Helper : MonoBehaviour
 			}
 
 		} else {
-			// Debug.Log(IsPositionValid(row, column) + "\t" + IsConnectedToTop(row, column));
+			// //Debug.Log(IsPositionValid(row, column) + "\t" + IsConnectedToTop(row, column));
 			FindNewValidPosition (row, column, bubblePosition, bubble);
 		}
 
 		bubble.bubbleObject.tag = "Bubble";
 		bubble.bubbleObject.layer = 12;
 
-		//Debug.Log(game.matrix.bubbleMatrix[row, column].getColor());
+		////Debug.Log(game.matrix.bubbleMatrix[row, column].getColor());
 		DestroyTrios (row, column);
 		DestroyHangingBubbles ();
 		
 		CheckForBugs ();
-		//Debug.Log ("sup2");
+		////Debug.Log ("sup2");
 
 		gameController.AfterATurn ();
 	}
@@ -202,7 +203,7 @@ public class Helper : MonoBehaviour
 		rows.Add (row);
 		columns.Add (column);
 
-		// Debug.Log(row + "\t" + column);
+		// //Debug.Log(row + "\t" + column);
 
 		for (int i = 0; i < bubbleHelperList.Count; i++) {
 			row = rows [i];
@@ -290,7 +291,7 @@ public class Helper : MonoBehaviour
 
 		/*if (isConnected == false)
         {
-            Debug.Log(isConnected);
+            //Debug.Log(isConnected);
         }*/
 
 
@@ -311,7 +312,7 @@ public class Helper : MonoBehaviour
 		if (((IsRowFull (firstRow) && firstColumn < 19) || (!IsRowFull (firstRow) && firstColumn < 18)) &&
 			((IsPositionValid (firstRow, firstColumn + 1)) && IsConnectedToTop (firstRow, firstColumn + 1))) {
 			newPosition = new Vector2 (ColumnToPosition (firstColumn + 1, firstRow), RowToPosition (firstRow));
-			Debug.Log ("Direita");
+			//Debug.Log ("Direita");
 		}
 
 		//Esquerda
@@ -319,7 +320,7 @@ public class Helper : MonoBehaviour
 			((IsPositionValid (firstRow, firstColumn - 1)) && IsConnectedToTop (firstRow, firstColumn - 1))
 			&& (Vector2.Distance (bubblePosition, new Vector2 (ColumnToPosition (firstColumn - 1, firstRow), RowToPosition (firstRow))) < Vector2.Distance (bubblePosition, newPosition))) {
 			newPosition = new Vector2 (ColumnToPosition (firstColumn - 1, firstRow), RowToPosition (firstRow));
-			Debug.Log ("Esquerda");
+			//Debug.Log ("Esquerda");
 		}
 
 		//Embaixo / direita
@@ -327,7 +328,7 @@ public class Helper : MonoBehaviour
 			((IsPositionValid (firstRow + 1, firstColumn + 1)) && IsConnectedToTop (firstRow + 1, firstColumn + 1))
 			&& (Vector2.Distance (bubblePosition, new Vector2 (ColumnToPosition (firstColumn + 1, firstRow + 1), RowToPosition (firstRow + 1))) < Vector2.Distance (bubblePosition, newPosition))) {
 			newPosition = new Vector2 (ColumnToPosition (firstColumn + 1, firstRow + 1), RowToPosition (firstRow + 1));
-			Debug.Log ("Embaixo / direita");
+			//Debug.Log ("Embaixo / direita");
 		}
 
 		//Embaixo / esquerda
@@ -335,7 +336,7 @@ public class Helper : MonoBehaviour
 			((IsPositionValid (firstRow + 1, firstColumn - 1)) && IsConnectedToTop (firstRow + 1, firstColumn - 1))
 			&& (Vector2.Distance (bubblePosition, new Vector2 (ColumnToPosition (firstColumn - 1, firstRow + 1), RowToPosition (firstRow + 1))) < Vector2.Distance (bubblePosition, newPosition))) {
 			newPosition = new Vector2 (ColumnToPosition (firstColumn - 1, firstRow + 1), RowToPosition (firstRow + 1));
-			Debug.Log ("Embaixo / esquerda");
+			//Debug.Log ("Embaixo / esquerda");
 		}
 
 		//Acima / direita
@@ -343,7 +344,7 @@ public class Helper : MonoBehaviour
 			((IsPositionValid (firstRow - 1, firstColumn + 1)) && IsConnectedToTop (firstRow - 1, firstColumn + 1))
 			&& (Vector2.Distance (bubblePosition, new Vector2 (ColumnToPosition (firstColumn + 1, firstRow - 1), RowToPosition (firstRow - 1))) < Vector2.Distance (bubblePosition, newPosition))) {
 			newPosition = new Vector2 (ColumnToPosition (firstColumn + 1, firstRow - 1), RowToPosition (firstRow - 1));
-			Debug.Log ("Acima / direita");
+			//Debug.Log ("Acima / direita");
 		}
 
 		//Acima / esquerda
@@ -351,14 +352,14 @@ public class Helper : MonoBehaviour
 			((IsPositionValid (firstRow - 1, firstColumn - 1)) && IsConnectedToTop (firstRow - 1, firstColumn - 1))
 			&& (Vector2.Distance (bubblePosition, new Vector2 (ColumnToPosition (firstColumn - 1, firstRow - 1), RowToPosition (firstRow - 1))) < Vector2.Distance (bubblePosition, newPosition))) {
 			newPosition = new Vector2 (ColumnToPosition (firstColumn - 1, firstRow - 1), RowToPosition (firstRow - 1));
-			Debug.Log ("Acima / esquerda");
+			//Debug.Log ("Acima / esquerda");
 		}
 
 		newRow = PositionToRow (newPosition);
 		newColumn = PositionToColumn (newPosition, newRow);
 
-		//Debug.Log(bubblePosition + "\t" + newPosition);
-		//Debug.Log(newRow + "\t" + newColumn);
+		////Debug.Log(bubblePosition + "\t" + newPosition);
+		////Debug.Log(newRow + "\t" + newColumn);
 
 		game.matrix.bubbleMatrix [newRow, newColumn] = bubble;
 
@@ -374,6 +375,7 @@ public class Helper : MonoBehaviour
 	//Mesma lógica do IsConnectedToTop
 	void DestroyTrios (int row, int column)
 	{
+		//bolhas comuns
 		if (game.matrix.bubbleMatrix [row, column].getColor () != "Explode" && game.matrix.bubbleMatrix [row, column].getColor () != "Adapt") {
 
 			List<int> rows = new List<int> ();
@@ -475,7 +477,7 @@ public class Helper : MonoBehaviour
 				explosionAudioClip.Play ();
 
 				for (int i = 0; i < bubblesToDestroy.Count; i++) {
-					//Debug.Log (bubblesToDestroy [i].getColor ());
+					////Debug.Log (bubblesToDestroy [i].getColor ());
 					game.matrix.bubbleMatrix [rows [i], columns [i]].bubbleObject.tag = "Untagged";
 					GameObject child = game.matrix.bubbleMatrix [rows [i], columns [i]].bubbleObject.transform.FindChild ("explosion").gameObject;
 					child.SetActive (true);
@@ -484,6 +486,7 @@ public class Helper : MonoBehaviour
 				}
 			}
 
+			//bolhas power up
 		} else {
 			
 			List<int> rows = new List<int> ();
@@ -569,7 +572,7 @@ public class Helper : MonoBehaviour
 				explosionAudioClip.Play ();
 			
 				for (int i = 0; i < bubblesToDestroy.Count; i++) {
-					//Debug.Log (bubblesToDestroy [i].getColor ());
+					////Debug.Log (bubblesToDestroy [i].getColor ());
 					game.matrix.bubbleMatrix [rows [i], columns [i]].bubbleObject.tag = "Untagged";
 					GameObject child = game.matrix.bubbleMatrix [rows [i], columns [i]].bubbleObject.transform.FindChild ("explosion").gameObject;
 					child.SetActive (true);
@@ -583,6 +586,7 @@ public class Helper : MonoBehaviour
 
 	}
 
+	//Power up da bolha adapt
 	void PowerUpAdapt (List<int> rowsFound, List<int> columnsFound, List<Bubbles> bubblesFound)
 	{
 
@@ -687,7 +691,7 @@ public class Helper : MonoBehaviour
 
 			try {
 				combinationsFound.Add (bubblesToDestroy.Count);
-				//Debug.Log (bubblesToDestroy.Count + "\t" + bubblesToDestroy [0].bubbleObject.name);
+				////Debug.Log (bubblesToDestroy.Count + "\t" + bubblesToDestroy [0].bubbleObject.name);
 				if (bubblesToDestroy.Count > aux) {
 					aux = bubblesToDestroy.Count;
 					name = bubblesToDestroy [0].bubbleObject.name;
@@ -698,7 +702,7 @@ public class Helper : MonoBehaviour
 		}
 
 		if (aux > 1) {
-			Debug.Log (aux + "\t" + name);
+			//Debug.Log (aux + "\t" + name);
 			game.matrix.bubbleMatrix [rowsFound [0], columnsFound [0]].setColor (0, name);
 			DestroyTrios (rowsFound [0], columnsFound [0]);
 		} else {
@@ -725,7 +729,7 @@ public class Helper : MonoBehaviour
 						GameObject child = game.matrix.bubbleMatrix [i, j].bubbleObject.transform.FindChild ("caindo").gameObject;
 						child.SetActive (true);
 						extraBubbles++;
-						//Debug.Log (i + "\t" + j);
+						////Debug.Log (i + "\t" + j);
 						Destroy (game.matrix.bubbleMatrix [i, j].bubbleObject, 0.6f);
 						game.matrix.bubbleMatrix [i, j] = null;
 						playSound = true;
@@ -812,6 +816,8 @@ public class Helper : MonoBehaviour
 
 	}
 
+	//acha o bug do mac e arruma ele
+	//ou tenta arrumar
 	public void CheckForBugs ()
 	{
 
@@ -821,7 +827,7 @@ public class Helper : MonoBehaviour
 
 		int row, column;
 
-		//Debug.Log ("sup");
+		////Debug.Log ("sup");
 
 		for (int i = 0; i < bubblesGameObjects.Length; i ++) {
 			row = PositionToRow (bubblesGameObjects [i].transform.position);
@@ -829,13 +835,13 @@ public class Helper : MonoBehaviour
 			bubbleObjectController = bubblesGameObjects [i].GetComponent<BubblesController> ();
 
 
-			//Debug.Log (row + "\t" + column + "\t" + game.matrix.bubbleMatrix [row, column]);
+			////Debug.Log (row + "\t" + column + "\t" + game.matrix.bubbleMatrix [row, column]);
 
 			if (game.matrix.bubbleMatrix [row, column] == null && bubbleObjectController.isMoving == false) {
+				////Debug.Log (row + "\t" + column + "\t" + game.matrix.bubbleMatrix [row, column]);
+				////Debug.Log (bubblesGameObjects [i].name);
 				//Debug.Log (row + "\t" + column + "\t" + game.matrix.bubbleMatrix [row, column]);
 				//Debug.Log (bubblesGameObjects [i].name);
-				Debug.Log (row + "\t" + column + "\t" + game.matrix.bubbleMatrix [row, column]);
-				Debug.Log (bubblesGameObjects [i].name);
 
 				Destroy (bubblesGameObjects [i], 0.4f);
 			}

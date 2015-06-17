@@ -4,20 +4,20 @@ using System.Collections;
 public class GameController : MonoBehaviour
 {
 
-	public static bool playing = true;
-	public int turns = 0;
+	public static bool playing = true;	//Se o jogo ta rodando
+	public int turns = 0;	//rodadas
 	public bool win, lose;
-	public int totalPoints = 0;
-	public int bubblesLeft = 0;
-	public GameObject victoryScreen, loseScreen;
-	public int powerUpExplodeCounter = 0;
-	public int adaptPowerUpTimes = 0;
+	public int totalPoints = 0;	//pontuacao total na fase
+	public int bubblesLeft = 0;	//bolhas restantes na fase
+	public GameObject victoryScreen, loseScreen;	//telas de vitoria e derrota
+	public int powerUpExplodeCounter = 0;	//contador de rodadas pro power up
+	public int adaptPowerUpTimes = 0;	//acho que o mesmo que o de cima pro outro power up
 
 	private Shoot shoot;
 	private Helper helper;
 	private NewGame game;
-	private int basePoints = 100;
-	private int pointsModifier = 1;
+	private int basePoints = 100;	//pontuacao base ao destruir um trio
+	private int pointsModifier = 1;	//modificador do combo
 
 	//minatto
 	public GameObject GuideLine;
@@ -30,18 +30,19 @@ public class GameController : MonoBehaviour
 		bubblesLeft = game.totalUsableBubbles;
 		playing = true;
 
-		GuideLine = FindObjectOfType<LineRenderer>().gameObject;
+		GuideLine = FindObjectOfType<LineRenderer> ().gameObject;
 	}
 
-	void Update(){
-		if (Input.GetKey(KeyCode.J))
+	void Update ()
+	{
+		if (Input.GetKey (KeyCode.J))
 			win = true;
 	}
 	//Controla a jogada depois de lançar a bola
 	public void AfterATurn ()
 	{
 		if (playing) {
-			if (!helper.hitBubbles) {
+			if (!helper.hitBubbles) {	//Se nao acertou trio
 				turns++;
 				Invoke ("CheckIfNewRow", 0.2f);
 				pointsModifier = 1;
@@ -82,14 +83,14 @@ public class GameController : MonoBehaviour
 
 		if (turns >= game.totalUsableBubbles) {
 			lose = true;
-			Debug.Log ("lose");
+			//Debug.Log ("lose");
 		}
 
 		for (int i = 0; i < game.matrix.bubbleMatrix.GetLength(1); i++) {
 			try {
 				if (game.matrix.bubbleMatrix [10, i] != null) {
 					lose = true;
-					Debug.Log ("lose");
+					//Debug.Log ("lose");
 				}
 			} catch (System.IndexOutOfRangeException) {
 
@@ -97,12 +98,12 @@ public class GameController : MonoBehaviour
 		}
 
 		if (lose) {
-			if (UserController.instance.Facebook){
-					UserController.instance.life--;
-					UpdateUserController.instance.UpdateDatabase ();
-				}
+			if (UserController.instance.Facebook) {
+				UserController.instance.life--;
+				UpdateUserController.instance.UpdateDatabase ();
+			}
 			playing = false;
-			GuideLine.SetActive(false);
+			GuideLine.SetActive (false);
 			loseScreen.SetActive (true);
 		}
 	}
@@ -124,9 +125,9 @@ public class GameController : MonoBehaviour
 		if (win) {
 			if (UserController.instance.Facebook)
 				UpdateUserController.instance.UpdateDatabase ();
-			Debug.Log ("win");
+			//Debug.Log ("win");
 			playing = false;
-			GuideLine.SetActive(false);
+			GuideLine.SetActive (false);
 			victoryScreen.SetActive (true);
 		}
 	}
