@@ -71,7 +71,9 @@
      <Compile Include="Assets\Interface\MainMenu.cs" />
      <Compile Include="Assets\Interface\OpcaoOnOff.cs" />
      <Compile Include="Assets\Interface\Opcoes.cs" />
+     <Compile Include="Assets\Interface\ScrollBarFix.cs" />
      <Compile Include="Assets\Interface\TryAgain.cs" />
+     <Compile Include="Assets\Linha\Tracejado.cs" />
      <Compile Include="Assets\Movies\PlayIntro.cs" />
      <Compile Include="Assets\ScoreUI.cs" />
      <Compile Include="Assets\Scripts UI\PosicaoTexto.cs" />
@@ -93,6 +95,8 @@
      <Compile Include="Assets\Scripts\ErrorDisplay.cs" />
      <Compile Include="Assets\Scripts\GameController.cs" />
      <Compile Include="Assets\Scripts\GoToMenu.cs" />
+     <Compile Include="Assets\Scripts\GuestLogin.cs" />
+     <Compile Include="Assets\Scripts\GuideLine.cs" />
      <Compile Include="Assets\Scripts\Helper.cs" />
      <Compile Include="Assets\Scripts\HighScore.cs" />
      <Compile Include="Assets\Scripts\Level.cs" />
